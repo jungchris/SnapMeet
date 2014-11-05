@@ -1,0 +1,9 @@
+
+/* Class = "IBUILabel"; text = "Text"; ObjectID = "E47-4D-HhX"; */
+"E47-4D-HhX.text" = "Texto";
+
+/* Class = "IBUILabel"; text = "Time"; ObjectID = "oKT-iv-qMk"; */
+"oKT-iv-qMk.text" = "Hora";
+
+/* Class = "IBUILabel"; text = "Name"; ObjectID = "oqz-Ql-6F0"; */
+"oqz-Ql-6F0.text" = "Nombre";

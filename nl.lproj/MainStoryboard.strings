@@ -1,0 +1,102 @@
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "0S4-di-npj"; */
+"0S4-di-npj.text" = "Titel";
+
+/* Class = "IBUILabel"; text = "name"; ObjectID = "4vF-Du-qIt"; */
+"4vF-Du-qIt.text" = "Naam";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "5Hq-NF-Yv6"; */
+"5Hq-NF-Yv6.text" = "Etiket";
+
+/* Class = "IBUILabel"; text = "or if you prefer ..."; ObjectID = "61w-cl-f97"; */
+"61w-cl-f97.text" = "of inloggen zonder Facebook";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "C0V-GL-nSa"; */
+"C0V-GL-nSa.text" = "Detail";
+
+/* Class = "IBUIButton"; normalTitle = "Sign Up"; ObjectID = "CV9-bS-n6M"; */
+"CV9-bS-n6M.normalTitle" = "Meld je aan";
+
+/* Class = "IBUIButton"; normalTitle = "Privacy Notice"; ObjectID = "L47-wQ-AWl"; */
+"L47-wQ-AWl.normalTitle" = "Privacy Verklaring";
+
+/* Class = "IBUITextField"; text = "Name"; ObjectID = "PUf-Fi-JJT"; */
+"PUf-Fi-JJT.text" = "Naam";
+
+/* Class = "IBUINavigationItem"; title = "SnapMeet"; ObjectID = "SXY-qc-Chl"; */
+"SXY-qc-Chl.title" = "SnapMeet";
+
+/* Class = "IBUIViewController"; title = "SignupViewController"; ObjectID = "SZI-GL-nT7"; */
+"SZI-GL-nT7.title" = "SignupViewController";
+
+/* Class = "IBUIButton"; normalTitle = "Sign Up"; ObjectID = "VOf-2r-739"; */
+"VOf-2r-739.normalTitle" = "Meld je ann";
+
+/* Class = "IBUIViewController"; title = "LoginViewController"; ObjectID = "XT5-aU-LC0"; */
+"XT5-aU-LC0.title" = "LoginViewController";
+
+/* Class = "IBUIButton"; normalTitle = "Delete"; ObjectID = "YSM-DO-vKk"; */
+"YSM-DO-vKk.normalTitle" = "Uitwissen";
+
+/* Class = "IBUIButton"; normalTitle = "Log In"; ObjectID = "ZDW-Xw-tUb"; */
+"ZDW-Xw-tUb.normalTitle" = "Log In HUHUHUHUH";
+
+/* Class = "IBUILabel"; text = "(we won't post without your permission)"; ObjectID = "aKs-fT-0kF"; */
+"aKs-fT-0kF.text" = "(we zullen niet posten zonder uw toestemming)";
+
+/* Class = "IBUIButton"; normalTitle = "Share"; ObjectID = "bCx-gO-Yqk"; */
+"bCx-gO-Yqk.normalTitle" = "Delen";
+
+/* Class = "IBUILabel"; text = "We won't sell, trade or rent your email.  No spam, no nonsense."; ObjectID = "bE6-cM-2Qc"; */
+"bE6-cM-2Qc.text" = "We zullen niet verkopen, verhandelen of verhuren uw e-mail. Geen spam.";
+
+/* Class = "IBUIBarButtonItem"; title = "Navigate"; ObjectID = "c89-NT-QAy"; */
+"c89-NT-QAy.title" = "Besturen";
+
+/* Class = "IBUILabel"; text = "email"; ObjectID = "eBc-ho-95L"; */
+"eBc-ho-95L.text" = "email";
+
+/* Class = "IBUINavigationItem"; title = "SnapMeet - Snapshot"; ObjectID = "flV-7U-mmp"; */
+"flV-7U-mmp.title" = "SnapMeet - Momentopname";
+
+/* Class = "IBUIButton"; normalTitle = "Privacy Notice"; ObjectID = "ggA-9l-hHC"; */
+"ggA-9l-hHC.normalTitle" = "Privacy Verklaring";
+
+/* Class = "IBUIButton"; normalTitle = "Directions"; ObjectID = "hOA-hS-VDQ"; */
+"hOA-hS-VDQ.normalTitle" = "Routebeschrijving";
+
+/* Class = "IBUITextField"; text = "Email address"; ObjectID = "a3F-ru-OXh"; */
+"ha0-o2-Bo5.text" = "e-mailadres";
+
+/* Class = "IBUIBarButtonItem"; title = "Cancel"; ObjectID = "jOS-c9-CXb"; */
+"jOS-c9-CXb.title" = "Cancel";
+
+/* Class = "IBUITextField"; text = "Email address"; ObjectID = "mTb-n0-e2j"; */
+"kiU-dK-RFh.text" = "e-mailadres";
+
+/* Class = "IBUITextField"; text = "Password"; ObjectID = "lk7-Br-nKf"; */
+"lk7-Br-nKf.text" = "Wachtwoord";
+
+/* Class = "IBUINavigationItem"; title = "SnapMeet - Places"; ObjectID = "mDk-eX-wEq"; */
+"mDk-eX-wEq.title" = "SnapMeet - Plaatsen";
+
+/* Class = "IBUITextField"; text = "Password"; ObjectID = "ni1-e0-Skp"; */
+"ni1-e0-Skp.text" = "Wachtwoord";
+
+/* Class = "IBUINavigationItem"; title = "SnapMeet - Log In"; ObjectID = "p62-d1-b9O"; */
+"p62-d1-b9O.title" = "SnapMeet - Log In";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "pHR-J6-ld6"; */
+"pHR-J6-ld6.text" = "Etiket";
+
+/* Class = "IBUILabel"; text = "One-time location share with:"; ObjectID = "rMC-Xc-YDr"; */
+"rMC-Xc-YDr.text" = "Locatie delen: ";
+
+/* Class = "IBUINavigationItem"; title = "placeMe - Sign Up"; ObjectID = "v0U-Pf-8K6"; */
+"v0U-Pf-8K6.title" = "SnapMeet - Sign Up";
+
+/* Class = "IBUILabel"; text = "Don't have an account?"; ObjectID = "vNG-sD-lLR"; */
+"vNG-sD-lLR.text" = "Heb je nog geen account?";
+
+/* Class = "IBUIBarButtonItem"; title = "Log Out"; ObjectID = "vZx-zT-nEC"; */
+"vZx-zT-nEC.title" = "Uitloggen";

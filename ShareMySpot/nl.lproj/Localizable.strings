@@ -1,0 +1,79 @@
+/* 
+  Localizable.strings
+  Snap Meet
+
+  Created by chris on 4/1/14.
+  Copyright (c) 2014 Chris Jungmann. All rights reserved.
+*/
+
+// MainViewController:defineShareButton,defineFriendsButton
+"SHARE_BUTTON"          = "Deel Deze Plaats";
+"MAP_BUTTON"            = "Zie Kaart";
+"FRIENDS_BUTTON"        = "Plaatsen Gedeeld";
+"ADDRESS_BUTTON"        = "Adresboek";
+"SETTINGS_BUTTON"       = "Settings";
+"NAME_LABEL"            = "Ingelogd: ";
+
+// retrieveUserInfoFromFB
+"ERROR_TITLE_CONNECT"   = "Verbinding fout";
+"ERROR_MESSAGE_CONNECT" = "Uw verbinding met het internet lijkt offline te zijn. Controleer of u bent niet in vliegmodus.";
+// showFormattedError
+"ERROR_TITLE"           = "Vergissing!";
+"ERROR_DISMISS"         = "Ontslaan";
+
+// peoplePickerNavigationController
+"ERROR_TITLE_NOEMAIL"   = "Geen e-mail";
+"ERROR_MESSAGE_NOEMAIL" = "De geselecteerde ontvanger heeft een e-mail niet in uw adresboek.  Geen probleem, zullen we ze een SMS-bericht";
+"ERROR_DISMISS_OK"      = "Goed";
+
+"ERROR_TITLE_INVALID"   = "Ongeldig e-mail";
+"ERROR_MESSAGE_INVALID" = "De geselecteerde ontvanger niet beschikt over een geldig e-mail.  Geen probleem, zullen we ze een SMS-bericht";
+
+// MapVC
+"ERROR_TITLE_GPS"       = "Geen Locatie";
+"ERROR_MESSAGE_GPS"     = "We waren niet in staat om uw locatie te bepalen. Controleer of uw GPS is ingeschakeld en werkt.";
+
+"SUCCESS_TITLE"         = "Succes!";
+"SUCCESS_MESSAGE"       = "Uw locatie wordt gedeeld met ";
+
+"INVITE_TITLE"          = "Ontvangersaccount";
+"INVITE_MESSAGE"        = "De ontvanger van dit bericht heeft nog geen Snap-Meet-account te hebben. Stuur ze een uitnodiging om de app te downloaden.";
+"INVITE_MESSAGE_FAIL"   = "Niet in staat om een tekst-of e-mailbericht verzenden.";
+"INVITE_UNSELECTED"     = "No recipient has been selected from your address book.  You can send a message manually.";
+"INVITE_TEXT"           = "Stuur een tekstbericht";
+"INVITE_EMAIL"          = "Stuur e-mail";
+"INVITE_SUBJECT"        = "Te Downloaden Snap-Meet";
+"INVITE_BODY"           = "Om de locatie en snapshot worden gedeeld te bekijken, moet u Snap Meet kennis te krijgen van itms-apps://itunes.apple.com/us/app/snap-meet/id870848511?mt=8&uo=4";
+
+"ERR_TEXT_TITLE"        = "Kan Tekst Verstuur";
+"ERR_TEXT_MESSAGE"      = "Het apparaat lijkt geen ondersteuning voor het verzenden van SMS-berichten op dit moment.";
+"ERR_EMAIL_TITLE"       = "Kan Geen E-mail Versturen";
+"ERR_EMAIL_MESSAGE"     = "Het apparaat lijkt geen ondersteuning voor het verzenden van e-mails op dit moment.";
+"PUSH_MESSAGE"          = " is het delen van een nieuwe locatie met u.";
+
+// Login-SignupVC
+"PRIVACY_TITLE"         = "Privacy Verklaring";
+"PRIVACY_MESSAGE"       = "We hebben geen informatie over u te verzamelen voor andere doeleinden dan als nodig voor deze app om te functioneren doel. Wij verkopen, verhandelen of uw gegevens verhuren aan derden. Deze app maakt gebruik van uw e-mail, naam, naam van het apparaat en de GPS-locatie ALLEEN om u in contact met gebruikers die u kiest om locaties te delen met. Als u wilt wijzigen, wordt die informatie niet bijgewerkt of bijgehouden door deze app. U kunt inloggen met of een e-mail of Facebook-account. Deze app zal niet posten op je Facebook-account zonder uw toestemming.";
+
+"FBLOGIN_ERR_TITLE"     = "Probleem met Facebook Login";
+"FBLOGIN_ERR_MESSAGE"   = "De Facebook-login is geannuleerd.";
+
+"LOGIN_ERR_EMAIL"       = "Zorg ervoor dat u uw e-mailadres en wachtwoord.";
+"LOGIN_ERR_PWD"         = "Zorg ervoor dat je een sterk genoeg wachtwoord van zes of meer tekens ingevoerd.";
+"LOGIN_ERR_NAME"        = "Zorg ervoor dat u een gebruikersnaam ingevoerd.";
+"LOGIN_ERR_ALL"         = "Zorg ervoor dat u uw naam, e-mailadres en een sterk wachtwoord ingevoerd.";
+
+// LocationsVC
+"DEFAULT_NONAME"        = "Geen Naam";
+"DEFAULT_NOTIME"        = "Geen tijd specfiied";
+"DEFAULT_DEVICE"        = "iOS-apparaat";
+"TIME_SENT"             = "Verzonden op: ";
+
+// DetailVC
+"ERR_TITLE_NOGPSINFO"   = "Geen GPS-gegevens";
+"ERR_MESSAGE_NOGPSINFO" = "De afzender heeft GPS locatie informatie niet bevatten. Selecteer een andere plaats.";
+"SENT_BY"               = "Die door: ";
+
+
+
+

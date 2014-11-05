@@ -1,0 +1,79 @@
+/* 
+  Localizable.strings
+  Snap Meet
+
+  Created by chris on 4/1/14.
+  Copyright (c) 2014 Chris Jungmann. All rights reserved.
+*/
+
+// MainViewController:defineShareButton,defineFriendsButton
+"SHARE_BUTTON"          = "Chia Sẻ Này";
+"MAP_BUTTON"            = "Xem bản đồ";
+"FRIENDS_BUTTON"        = "Xem điểm";
+"ADDRESS_BUTTON"        = "Sổ địa chỉ";
+"SETTINGS_BUTTON"       = "sự sắp đặt";
+"NAME_LABEL"            = "đăng nhập: ";
+
+// retrieveUserInfoFromFB
+"ERROR_TITLE_CONNECT"   = "Lỗi kết nối";
+"ERROR_MESSAGE_CONNECT" = "Kết nối với Internet Xuất hiện được ẩn. Vui lòng kiểm tra đó bạn đang không ở trong chế độ máy bay.";
+// showFormattedError
+"ERROR_TITLE"           = "Rất tiếc";
+"ERROR_DISMISS"         = "chận đường";
+
+// peoplePickerNavigationController
+"ERROR_TITLE_NOEMAIL"   = "Không có email";
+"ERROR_MESSAGE_NOEMAIL" = "Người nhận được chọn không có một email trong sổ địa chỉ của bạn. Không có vấn đề, chúng tôi sẽ gửi cho họ một tin nhắn văn bản";
+"ERROR_DISMISS_OK"      = "cách chức";
+
+"ERROR_TITLE_INVALID"   = "Email không hợp lệ";
+"ERROR_MESSAGE_INVALID" = "Người nhận chọn không có một email hợp lệ.  Không có vấn đề, chúng tôi sẽ gửi cho họ một tin nhắn văn bản";
+
+// MapVC
+"ERROR_TITLE_GPS"       = "Không có vị trí";
+"ERROR_MESSAGE_GPS"     = "Chúng tôi không thể xác định vị trí của bạn. Hãy kiểm tra xem GPS của bạn nằm trên và làm việc.";
+
+"SUCCESS_TITLE"         = "Sự thành công";
+"SUCCESS_MESSAGE"       = "Vị trí của bạn đã được chia sẻ với ";
+
+"INVITE_TITLE"          = "Tài khoản người nhận";
+"INVITE_MESSAGE"        = "Người nhận thông báo này không có một tài khoản Snap-Meet gỡ được nêu ra. Gửi cho họ một lời mời để tải về Snap-Meet gỡ";
+"INVITE_MESSAGE_FAIL"   = "Không thể gửi tin nhắn hoặc thư điện tử.";
+"INVITE_UNSELECTED"     = "No recipient has been selected from your address book.  You can send a message manually.";
+"INVITE_TEXT"           = "Gửi tin nhắn văn bản";
+"INVITE_EMAIL"          = "Gửi tin nhắn email";
+"INVITE_SUBJECT"        = "Đi được phần mềm Snap-Meet";
+"INVITE_BODY"           = "Để thấy vị trí và ảnh chụp được chia sẻ, bạn sẽ cần phải nhận được Snap Meet gỡ từ itms-apps://itunes.apple.com/us/app/snap-meet/id870848511?mt=8&uo=4";
+
+"ERR_TEXT_TITLE"        = "Không thể gửi tin nhắn văn bản";
+"ERR_TEXT_MESSAGE"      = "Điện thoại của bạn không xuất hiện để hỗ trợ gửi tin nhắn vào lúc này.";
+"ERR_EMAIL_TITLE"       = "Không thể gửi tin nhắn email";
+"ERR_EMAIL_MESSAGE"     = "Điện thoại của bạn không xuất hiện để hỗ trợ việc gửi email vào lúc này.";
+"PUSH_MESSAGE"          = " là chia sẻ một vị trí mới với bạn.";
+
+// Login-SignupVC
+"PRIVACY_TITLE"         = "Thông Báo";
+"PRIVACY_MESSAGE"       = "Chúng tôi không thu thập thông tin về bạn cho bất kỳ mục đích nào khác hơn là cần thiết cho các ứng dụng này hoạt động. Chúng tôi không bán, thương mại, hoặc cho thuê thông tin của bạn cho bên ngoài. Ứng dụng này sử dụng thư điện tử, tên, tên thiết bị của bạn và vị trí GPS chỉ để kết nối bạn với người sử dụng mà bạn chọn để chia sẻ địa điểm với. Nếu bạn thay đổi vị trí, thông tin đó không được cập nhật hoặc theo dõi bởi ứng dụng này. Bạn có thể đăng nhập với tài khoản Facebook hoặc một email hoặc. Ứng dụng này sẽ không gửi vào tài khoản Facebook của bạn mà không cần sự cho phép của bạn.";
+
+"FBLOGIN_ERR_TITLE"     = "Lỗi đăng nhập Facebook";
+"FBLOGIN_ERR_MESSAGE"   = "Đăng nhập Facebook đã bị hủy bỏ.";
+
+"LOGIN_ERR_EMAIL"       = "Hãy chắc chắn rằng bạn đã nhập email và mật khẩu của bạn.";
+"LOGIN_ERR_PWD"         = "Hãy chắc chắn rằng bạn đã nhập một mật khẩu đủ mạnh sáu hoặc nhiều ký tự.";
+"LOGIN_ERR_NAME"        = "Hãy chắc chắn rằng bạn nhập tên người dùng.";
+"LOGIN_ERR_ALL"         = "Hãy chắc chắn rằng bạn đã nhập tên của bạn, email và mật khẩu mạnh.";
+
+// LocationsVC
+"DEFAULT_NONAME"        = "Không có tên";
+"DEFAULT_NOTIME"        = "Không có thời gian quy định";
+"DEFAULT_DEVICE"        = "thiết bị iOS";
+"TIME_SENT"             = "Gửi tại: ";
+
+// DetailVC
+"ERR_TITLE_NOGPSINFO"   = "Không có dữ liệu GPS";
+"ERR_MESSAGE_NOGPSINFO" = "Người gửi không bao gồm thông tin vị trí GPS. Hãy chọn một nơi khác.";
+"SENT_BY"               = "Gửi bởi: ";
+
+
+
+

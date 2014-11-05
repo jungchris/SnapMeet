@@ -1,0 +1,79 @@
+/* 
+  Localizable.strings
+  Snap Meet
+
+  Created by chris on 4/1/14.
+  Copyright (c) 2014 Chris Jungmann. All rights reserved.
+*/
+
+// MainViewController:defineShareButton,defineFriendsButton
+"SHARE_BUTTON"          = "Share Place";
+"MAP_BUTTON"            = "Show Map";
+"FRIENDS_BUTTON"        = "Places Shared";
+"ADDRESS_BUTTON"        = "Address Book";
+"SETTINGS_BUTTON"       = "Settings";
+"NAME_LABEL"            = "Logged in: ";
+
+// retrieveUserInfoFromFB
+"ERROR_TITLE_CONNECT"   = "Connection Error";
+"ERROR_MESSAGE_CONNECT" = "Your connection to the Internet appears to be offline.  Please check that you are not in airplane mode.";
+// showFormattedError
+"ERROR_TITLE"           = "Oops!";
+"ERROR_DISMISS"         = "Dismiss";
+
+// peoplePickerNavigationController
+"ERROR_TITLE_NOEMAIL"   = "No email";
+"ERROR_MESSAGE_NOEMAIL" = "The recipient selected does not have an email in your address book.  No problem, we'll send them a text message.";
+"ERROR_DISMISS_OK"      = "Ok";
+
+"ERROR_TITLE_INVALID"   = "Invalid Email";
+"ERROR_MESSAGE_INVALID" = "Selected recipient does not have a valid email.  No problem, we'll send them a text message.";
+
+// MapVC
+"ERROR_TITLE_GPS"       = "No Location";
+"ERROR_MESSAGE_GPS"     = "We were not able to determine your location.  Please check that your GPS is on and working.";
+
+"SUCCESS_TITLE"         = "Success!";
+"SUCCESS_MESSAGE"       = "Your location has been shared with ";
+
+"INVITE_TITLE"          = "Recipient Account";
+"INVITE_MESSAGE"        = "The recipient of this message does not have a Snap-Meet account yet.  Send them an invitation to download Snap-Meet";
+"INVITE_MESSAGE_FAIL"   = "The recipient does not have an account and you are unable to send text or email messages.";
+"INVITE_UNSELECTED"     = "No recipient has been selected from your address book.";
+"INVITE_TEXT"           = "Send text";
+"INVITE_EMAIL"          = "Send email";
+"INVITE_SUBJECT"        = "Get Snap-Meet";
+"INVITE_BODY"           = "To view the location and snapshot get Snap Meet itms-apps://itunes.apple.com/us/app/snap-meet/id870848511?mt=8&uo=4";
+
+"ERR_TEXT_TITLE"        = "Unable to Send Text";
+"ERR_TEXT_MESSAGE"      = "Your device does not appear to support sending text messages at this time.";
+"ERR_EMAIL_TITLE"       = "Unable to Send Email";
+"ERR_EMAIL_MESSAGE"     = "Your device does not appear to support sending emails at this time.";
+"PUSH_MESSAGE"          = " is sharing a new location with you.";
+
+// Login-SignupVC
+"PRIVACY_TITLE"         = "Privacy Notice";
+"PRIVACY_MESSAGE"       = "We do not collect information about you for any purpose other than as needed for this app to function.  We do not sell, trade, or rent your information to outside parties.  This app uses your email, name, device name and GPS location ONLY to connect you with users you choose to share locations with.  If you change location, that information is not updated or tracked by this app.  You can log in with either an email or Facebook account.  This app will not post to your Facebook account without your permission.";
+
+"FBLOGIN_ERR_TITLE"     = "Facebook Login Error";
+"FBLOGIN_ERR_MESSAGE"   = "The Facebook login was cancelled.";
+
+"LOGIN_ERR_EMAIL"       = "Make sure you enter a valid email.";
+"LOGIN_ERR_PWD"         = "Make sure you enter a strong enough password with six or more characters.";
+"LOGIN_ERR_NAME"        = "Make sure you enter your name or nickname.";
+"LOGIN_ERR_ALL"         = "Make sure you entered your name, email and a decent password.";
+
+// LocationsVC
+"DEFAULT_NONAME"        = "No name";
+"DEFAULT_NOTIME"        = "No time specified";
+"DEFAULT_DEVICE"        = "iOS Device";
+"TIME_SENT"             = "Sent at: ";
+
+// DetailVC
+"ERR_TITLE_NOGPSINFO"   = "No GPS Data";
+"ERR_MESSAGE_NOGPSINFO" = "The sender didn't include GPS location information.  Please select another shared place.";
+"SENT_BY"               = "Sent by: ";
+
+
+
+

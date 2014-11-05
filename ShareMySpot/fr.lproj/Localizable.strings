@@ -1,0 +1,76 @@
+/* 
+  Localizable.strings
+  Snap Meet
+
+  Created by chris on 4/1/14.
+  Copyright (c) 2014 Chris Jungmann. All rights reserved.
+*/
+
+// MainViewController:defineShareButton,defineFriendsButton
+"SHARE_BUTTON"          = "Référer Ce Lieux";
+"MAP_BUTTON"            = "Voir La Carte";
+"FRIENDS_BUTTON"        = "Lieux Référé";
+"ADDRESS_BUTTON"        = "Carnet d'adresses";
+"SETTINGS_BUTTON"       = "Settings";
+"NAME_LABEL"            = "Connecté ";
+
+// retrieveUserInfoFromFB
+"ERROR_TITLE_CONNECT"   = "Erreur de connexion";
+"ERROR_MESSAGE_CONNECT" = "Votre connexion à l'Internet semble être déconnecté. S'il vous plaît vérifier que vous n'êtes pas en mode avion.";
+// showFormattedError
+"ERROR_TITLE"           = "Problème";
+"ERROR_DISMISS"         = "Renvoyer";
+
+// peoplePickerNavigationController
+"ERROR_TITLE_NOEMAIL"   = "Aucune Adresse Courriel";
+"ERROR_MESSAGE_NOEMAIL" = "Le destinataire sélectionné ne dispose pas d'un e-mail dans votre carnet d'adresses.  Pas de problème, nous allons leur envoyer un message texte";
+"ERROR_DISMISS_OK"      = "Ok";
+
+"ERROR_TITLE_INVALID"   = "Courriel Non Valide";
+"ERROR_MESSAGE_INVALID" = "Destinataire sélectionné n'a pas une adresse email valide.  Pas de problème, nous allons leur envoyer un message texte";
+
+// MapVC
+"ERROR_TITLE_GPS"       = "Sans Position";
+"ERROR_MESSAGE_GPS"     = "Nous n'étions pas en mesure de déterminer votre position. S'il vous plaît vérifier que votre GPS est allumé et fonctionne.";
+
+"SUCCESS_TITLE"         = "Succès!";
+"SUCCESS_MESSAGE"       = "Votre position a été communiqué avec ";
+
+"INVITE_TITLE"          = "Compte Destinataire";
+"INVITE_MESSAGE"        = "Le destinataire de ce message n'a pas encore un compte Snap-Meet. Envoyez-lui ou elle une invitation pour télécharger l'application.";
+"INVITE_MESSAGE_FAIL"   = "Pour le moment il n'est pas possible d'envoyer de courriel ou texto";
+"INVITE_UNSELECTED"     = "No recipient has been selected from your address book.  You can send a message manually.";
+"INVITE_TEXT"           = "Envoyer message texte";
+"INVITE_EMAIL"          = "Envoyer un courriel";
+"INVITE_SUBJECT"        = "Télécharger Snap-Meet";
+"INVITE_BODY"           = "Pour afficher l'emplacement et l'instantané étant partagé, vous aurez besoin d'obtenir Snap Meet itms-apps://itunes.apple.com/us/app/snap-meet/id870848511?mt=8&uo=4";
+
+"ERR_TEXT_TITLE"        = "Impossible d'envoyer SMS";
+"ERR_TEXT_MESSAGE"      = "Votre appareil ne semble pas être en mesure d'envoyer des messages texte à ce moment.";
+"ERR_EMAIL_TITLE"       = "Impossible d'envoyer";
+"ERR_EMAIL_MESSAGE"     = "Votre appareil ne semble pas être en mesure d'envoyer des emails à ce moment.";
+"PUSH_MESSAGE"          = " partage un nouvel endroit avec vous.";
+
+// Login-SignupVC
+"PRIVACY_TITLE"         = "Avis de Confidentialité";
+"PRIVACY_MESSAGE"       = "Nous ne collectons aucune information vous concernant à des fins autres que celles nécessaires à fonction de l'application. Nous ne vendons pas, ni ne louons vos informations à des parties externes. Cette application utilise votre e-mail, nom, nom de l'appareil, et la localisation GPS seulement à vous connecter avec les utilisateurs que vous choisissez. Si vous modifiez votre emplacement, cette information n'est pas mise à jour ou suivie par l'application. Vous pouvez vous connecter soit avec votre courriel ou votre compte Facebook. Cette application ne va pas publier sur votre compte Facebook sans votre permission.";
+
+"FBLOGIN_ERR_TITLE"     = "Erreur de Connexion sur Facebook";
+"FBLOGIN_ERR_MESSAGE"   = "La connexion Facebook a été annulée.";
+
+"LOGIN_ERR_EMAIL"       = "Assurez-vous que vous avez saisi votre email et votre mot de passe.";
+"LOGIN_ERR_PWD"         = "Assurez-vous que vous avez entré un mot de passe assez fort au moins six caractères.";
+"LOGIN_ERR_NAME"        = "Assurez-vous que vous avez entré un nom d'utilisateur.";
+"LOGIN_ERR_ALL"         = "Assurez-vous que vous avez saisi votre nom, e-mail et un mot de passe fort.";
+
+// LocationsVC
+"DEFAULT_NONAME"        = "Pas de nom spécifiée";
+"DEFAULT_NOTIME"        = "Pas d'heure spécifiée";
+"DEFAULT_DEVICE"        = "Appareil iOS";
+"TIME_SENT"             = "Envoyé à: ";
+
+// DetailVC
+"ERR_TITLE_NOGPSINFO"   = "Données GPS Manquantes";
+"ERR_MESSAGE_NOGPSINFO" = "L'expéditeur n'a pas inclus les informations de localisation.";
+"SENT_BY"               = "Envoyé par: ";
+
