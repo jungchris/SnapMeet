@@ -1,6 +1,6 @@
 //
-//  ShareMySpotTests.m
-//  ShareMySpotTests
+//  Snap MeetTests.m
+//  Snap MeetTests
 //
 //  Created by chris on 1/13/14.
 //  Copyright (c) 2014 Chris Jungmann. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  MainViewController.m
-//  ShareMySpot
+//  Snap Meet
 //
 //  Created by chris on 1/14/14.  Current App Store vers 1.0 - 04/07/2014.  See release and version notes at bottom of this document.
 //  Copyright (c) 2014 Chris Jungmann. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  DetailViewController.h
-//  ShareMySpot
+//  Snap Meet
 //
 //  Created by chris on 3/12/14.
 //  Copyright (c) 2014 Chris Jungmann. All rights reserved.

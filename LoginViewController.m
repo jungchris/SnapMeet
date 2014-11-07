@@ -1,6 +1,6 @@
 //
 //  LoginViewController.m
-//  ShareMySpot
+//  Snap Meet
 //
 //  Created by chris on 1/14/14.
 //  Copyright (c) 2014 Chris Jungmann. All rights reserved.
@@ -10,6 +10,7 @@
 #import "MainViewController.h"              // added to be able to invoke delegate on completion 3-1-14
 
 #import <Parse/Parse.h>
+
 
 @interface LoginViewController ()
 

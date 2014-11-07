@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DC0EDB41A0C51B200A0DBF6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC0EDB31A0C51B200A0DBF6 /* FacebookSDK.framework */; };
+		2DC0EDB81A0C63B400A0DBF6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC0EDB71A0C63B400A0DBF6 /* Parse.framework */; };
 		CE0C9FAD18D275610035403F /* coffline-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0C9FA118D275610035403F /* coffline-568h@2x.png */; };
 		CE0C9FAE18D275610035403F /* coffline.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0C9FA218D275610035403F /* coffline.png */; };
 		CE0C9FAF18D275610035403F /* coffline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0C9FA318D275610035403F /* coffline@2x.png */; };
@@ -27,7 +29,6 @@
 		CE6D708818C1046A000DF38B /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6D708418C1046A000DF38B /* login-button-small-pressed@2x.png */; };
 		CE6D708918C1046A000DF38B /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6D708518C1046A000DF38B /* login-button-small.png */; };
 		CE6D708A18C1046A000DF38B /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6D708618C1046A000DF38B /* login-button-small@2x.png */; };
-		CE749E1318BFEFC600A1083F /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE749E1218BFEFC600A1083F /* FacebookSDK.framework */; };
 		CE81CA8618D7C58400F0DCFB /* active_404.png in Resources */ = {isa = PBXBuildFile; fileRef = CE81CA8218D7C58400F0DCFB /* active_404.png */; };
 		CE81CA8718D7C58400F0DCFB /* active_404@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE81CA8318D7C58400F0DCFB /* active_404@2x.png */; };
 		CE81CA8818D7C58400F0DCFB /* pressed_404.png in Resources */ = {isa = PBXBuildFile; fileRef = CE81CA8418D7C58400F0DCFB /* pressed_404.png */; };
@@ -84,7 +85,6 @@
 		CEFF24041884DDF90058D5D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEFF23EC1884DDF90058D5D2 /* UIKit.framework */; };
 		CEFF240E1884DDF90058D5D2 /* ShareMySpotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFF240D1884DDF90058D5D2 /* ShareMySpotTests.m */; };
 		CEFF241D1885B6F40058D5D2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFF241C1885B6F40058D5D2 /* MainViewController.m */; };
-		CEFF24211885C5A70058D5D2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEFF24201885C5A70058D5D2 /* Parse.framework */; };
 		CEFF242B1885C6A00058D5D2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEFF24221885C6A00058D5D2 /* AudioToolbox.framework */; };
 		CEFF242C1885C6A00058D5D2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEFF24231885C6A00058D5D2 /* CFNetwork.framework */; };
 		CEFF242D1885C6A00058D5D2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEFF24241885C6A00058D5D2 /* CoreLocation.framework */; };
@@ -109,6 +109,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2DC0EDB31A0C51B200A0DBF6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		2DC0EDB71A0C63B400A0DBF6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		CE0C9FA118D275610035403F /* coffline-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coffline-568h@2x.png"; sourceTree = "<group>"; };
 		CE0C9FA218D275610035403F /* coffline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffline.png; sourceTree = "<group>"; };
 		CE0C9FA318D275610035403F /* coffline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coffline@2x.png"; sourceTree = "<group>"; };
@@ -135,7 +137,6 @@
 		CE6D708418C1046A000DF38B /* login-button-small-pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small-pressed@2x.png"; sourceTree = "<group>"; };
 		CE6D708518C1046A000DF38B /* login-button-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small.png"; sourceTree = "<group>"; };
 		CE6D708618C1046A000DF38B /* login-button-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small@2x.png"; sourceTree = "<group>"; };
-		CE749E1218BFEFC600A1083F /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		CE81CA8218D7C58400F0DCFB /* active_404.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_404.png; sourceTree = "<group>"; };
 		CE81CA8318D7C58400F0DCFB /* active_404@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_404@2x.png"; sourceTree = "<group>"; };
 		CE81CA8418D7C58400F0DCFB /* pressed_404.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pressed_404.png; sourceTree = "<group>"; };
@@ -211,7 +212,6 @@
 		CEFF240D1884DDF90058D5D2 /* ShareMySpotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareMySpotTests.m; sourceTree = "<group>"; };
 		CEFF241B1885B6F40058D5D2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		CEFF241C1885B6F40058D5D2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		CEFF24201885C5A70058D5D2 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		CEFF24221885C6A00058D5D2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CEFF24231885C6A00058D5D2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		CEFF24241885C6A00058D5D2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -239,15 +239,15 @@
 				CEFF242C1885C6A00058D5D2 /* CFNetwork.framework in Frameworks */,
 				CEFF242D1885C6A00058D5D2 /* CoreLocation.framework in Frameworks */,
 				CEFF242E1885C6A00058D5D2 /* libz.1.1.3.dylib in Frameworks */,
+				2DC0EDB81A0C63B400A0DBF6 /* Parse.framework in Frameworks */,
 				CEFF242F1885C6A00058D5D2 /* MobileCoreServices.framework in Frameworks */,
 				CEFF24301885C6A00058D5D2 /* QuartzCore.framework in Frameworks */,
 				CEFF24311885C6A00058D5D2 /* Security.framework in Frameworks */,
 				CEA9497518DCE87B007FBAE6 /* MapKit.framework in Frameworks */,
 				CEFF24331885C6A00058D5D2 /* SystemConfiguration.framework in Frameworks */,
 				CEFF23EB1884DDF90058D5D2 /* CoreGraphics.framework in Frameworks */,
-				CE749E1318BFEFC600A1083F /* FacebookSDK.framework in Frameworks */,
+				2DC0EDB41A0C51B200A0DBF6 /* FacebookSDK.framework in Frameworks */,
 				CEFF23ED1884DDF90058D5D2 /* UIKit.framework in Frameworks */,
-				CEFF24211885C5A70058D5D2 /* Parse.framework in Frameworks */,
 				CEFF23E91884DDF90058D5D2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,9 +323,10 @@
 		CEFF23E71884DDF90058D5D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2DC0EDB71A0C63B400A0DBF6 /* Parse.framework */,
+				2DC0EDB31A0C51B200A0DBF6 /* FacebookSDK.framework */,
 				CEA9497418DCE87B007FBAE6 /* MapKit.framework */,
 				CE5005C518CEAD9B0074173C /* MediaPlayer.framework */,
-				CE749E1218BFEFC600A1083F /* FacebookSDK.framework */,
 				CE6CAD0318BBD88000BA3FA5 /* iAd.framework */,
 				CEFF24221885C6A00058D5D2 /* AudioToolbox.framework */,
 				CEFF24231885C6A00058D5D2 /* CFNetwork.framework */,
@@ -335,7 +336,6 @@
 				CEFF24271885C6A00058D5D2 /* QuartzCore.framework */,
 				CEFF24281885C6A00058D5D2 /* Security.framework */,
 				CEFF242A1885C6A00058D5D2 /* SystemConfiguration.framework */,
-				CEFF24201885C5A70058D5D2 /* Parse.framework */,
 				CEFF23E81884DDF90058D5D2 /* Foundation.framework */,
 				CEFF23EA1884DDF90058D5D2 /* CoreGraphics.framework */,
 				CEFF23EC1884DDF90058D5D2 /* UIKit.framework */,
@@ -806,6 +806,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/user/Desktop/Developer/ShareMySpot,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShareMySpot/Snap Meet-Prefix.pch";
@@ -829,6 +830,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/user/Desktop/Developer/ShareMySpot,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShareMySpot/Snap Meet-Prefix.pch";
@@ -846,14 +848,14 @@
 		CEFF24151884DDF90058D5D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ShareMySpot.app/ShareMySpot";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Snap Meet.app/Snap Meet";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ShareMySpot/ShareMySpot-Prefix.pch";
+				GCC_PREFIX_HEADER = "ShareMySpot/Snap Meet-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -868,14 +870,14 @@
 		CEFF24161884DDF90058D5D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ShareMySpot.app/ShareMySpot";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Snap Meet.app/Snap Meet";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ShareMySpot/ShareMySpot-Prefix.pch";
+				GCC_PREFIX_HEADER = "ShareMySpot/Snap Meet-Prefix.pch";
 				INFOPLIST_FILE = "ShareMySpotTests/Snap MeetTests-Info.plist";
 				PRODUCT_NAME = "Snap MeetTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";

@@ -1,6 +1,6 @@
 //
 //  LocationTableCell.h
-//  ShareMySpot
+//  Snap Meet
 //
 //  Created by chris on 2/19/14.
 //  Copyright (c) 2014 Chris Jungmann. All rights reserved.

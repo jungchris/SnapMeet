@@ -1,6 +1,6 @@
 //
 //  LocationsViewController.m
-//  ShareMySpot
+//  Snap Meet
 //
 //  Created by chris on 1/17/14.
 //  Copyright (c) 2014 Chris Jungmann. All rights reserved.
