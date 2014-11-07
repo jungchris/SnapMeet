@@ -1040,9 +1040,10 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 #pragma mark - Notes and TODOs
 
 // TODOs:
-
-// Version 1.1:
-
+//
+//
+//
+// - VERSION: Push SmallMacBook version to Git
 // - TESTING: When I deleted single location share, app popped back to MainVC with badge removed as expected.
 // - FEATURE:  Localize the Settings VC
 // - FUNCTIONALITY: See forced logout todos to be more selective before forcing logout
@@ -1057,7 +1058,7 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 // - RELIABILITY: Implement URL scheme fallback on persistent Parse.com error
 // - LOOK & FEEL: If device capability does not include camera, do now show camera button in MapVC
 
-// Version 1.2:
+// Version 1.3:
 
 // - LOOK & FEEL: Change to tab-bar navigation
 // - FEATURE: Dig deeper into PFAnalytics trckAppOpenedWithLaunchOptions
