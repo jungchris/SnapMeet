@@ -1057,8 +1057,6 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 // TODOs:
 //
 //
-//
-// - VERSION: Push SmallMacBook version to Git
 // - TESTING: When I deleted single location share, app popped back to MainVC with badge removed as expected.
 // - FEATURE:  Localize the Settings VC
 // - FUNCTIONALITY: See forced logout todos to be more selective before forcing logout
@@ -1073,7 +1071,7 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 // - RELIABILITY: Implement URL scheme fallback on persistent Parse.com error
 // - LOOK & FEEL: If device capability does not include camera, do now show camera button in MapVC
 
-// Version 1.3:
+// Future Versions Wishlist:
 
 // - LOOK & FEEL: Change to tab-bar navigation
 // - FEATURE: Dig deeper into PFAnalytics trckAppOpenedWithLaunchOptions
@@ -1106,8 +1104,18 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 // Auto increment xCode build numbers: http://stackoverflow.com/questions/6286937/how-to-auto-increment-bundle-version-in-xcode-4/ and also http://stackoverflow.com/questions/6851660/version-vs-build-in-xcode-4
 
 //********************************************************************************************************************
+
+// DONE (Version 1.1.1):
 //
-// DONE (VERSION 1.1):
+//
+// 11-15-14 - UPDATED IOS: Code in appDelegate to handle deprecated methods related to remote notifications.  http://stackoverflow.com/questions/24216632/remote-notification-ios-8
+// 11-07-14 - HOUSEKEEPING: Repaired directory/name issues preventing linking/compile
+// 11-04-14 - VERSION: Push SmallMacBook version to Git
+
+//
+//********************************************************************************************************************
+//
+// DONE (App Store Version 1.1):
 //
 
 // 07-15-14 - BUG: Push notifications don't seem to be working with app version submitted to App Store http://stackoverflow.com/questions/10987102/how-to-fix-no-valid-aps-environment-entitlement-string-found-for-application and http://stackoverflow.com/questions/1074546/the-executable-was-signed-with-invalid-entitlements

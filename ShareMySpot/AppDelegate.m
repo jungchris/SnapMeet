@@ -23,8 +23,25 @@
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 
-    // Register for push notifications.
-    [application registerForRemoteNotificationTypes: UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
+    // Register for push notifications. (Deprecated)
+//    [application registerForRemoteNotificationTypes: UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
+    
+    // updated resistration for push notifications
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge
+                                                                                             |UIUserNotificationTypeSound
+                                                                                             |UIUserNotificationTypeAlert) categories:nil];
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
+        
+    } else {
+        
+        // this code is used for version prior to iOS 8.0
+        [application registerForRemoteNotificationTypes: UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
+
+    }
+    
     
     // implement Parse/Facebook integrated login 2-28-14
     [PFFacebookUtils initializeFacebook];
