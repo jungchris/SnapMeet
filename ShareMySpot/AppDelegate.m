@@ -26,6 +26,15 @@
     // Register for push notifications. (Deprecated)
 //    [application registerForRemoteNotificationTypes: UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
     
+    // http://corinnekrych.blogspot.com/2014/07/how-to-support-push-notification-for.html
+//if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+//    UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+//    [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+//    [[UIApplication sharedApplication] registerForRemoteNotifications];
+//} else {
+//    [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+//}
+    
     // updated resistration for push notifications
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         

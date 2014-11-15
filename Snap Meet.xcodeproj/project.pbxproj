@@ -812,7 +812,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShareMySpot/Snap Meet-Prefix.pch";
 				INFOPLIST_FILE = "ShareMySpot/Snap Meet-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "Snap Meet";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -836,7 +836,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShareMySpot/Snap Meet-Prefix.pch";
 				INFOPLIST_FILE = "ShareMySpot/Snap Meet-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Snap Meet";
 				PROVISIONING_PROFILE = "";

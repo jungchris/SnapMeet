@@ -286,6 +286,7 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 
 #pragma mark - Address book delegates
 
+// deprecated in iOS 8
 // implement the required methods for the ABPeopleNavigationControler
 - (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
     
@@ -302,6 +303,7 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     return NO;
 }
 
+// deprecated in iOS 8
 - (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *) peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person {
     
     NSLog(@"MainVC: peoplePickerNavController:peoplePicker shouldContinueAfterSelectingPerson");
@@ -402,7 +404,109 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     return NO;
 }
 
-#pragma mark - Navigation delegates
+// New iOS 8 methods
+// code in this method duplicates the above method (used in versions pre 8.0)
+// only diff in code is this is void while original return BOOL.
+- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person {
+    
+    NSLog(@"MainVC: peoplePickerNavigationController:peoplePicker didSelectPerson");
+    
+    // Extract Address Book email address using a Bridge Transfer
+    ABMultiValueRef emailAddresses = ABRecordCopyValue(person, kABPersonEmailProperty);
+    if (ABMultiValueGetCount(emailAddresses) > 0) {
+        
+        //        self.recipientEmail = (__bridge_transfer NSString*) ABMultiValueCopyValueAtIndex(emailAddresses, 0);
+        //        self.recipientName = (__bridge_transfer NSString *)ABRecordCopyCompositeName(person);
+        //        self.recipientMugshot = (__bridge NSData *)ABPersonCopyImageDataWithFormat(person, kABPersonImageFormatThumbnail);
+        
+        // updated 11-15-14 based on WWDC recommended approach
+        self.recipientEmail     = CFBridgingRelease(ABMultiValueCopyValueAtIndex(emailAddresses, 0));
+        self.recipientName      = CFBridgingRelease(ABRecordCopyCompositeName(person));
+        self.recipientMugshot   = CFBridgingRelease(ABPersonCopyImageDataWithFormat(person, kABPersonImageFormatThumbnail));
+    }
+    else {
+        
+        self.recipientEmail = @"[None]";
+        self.recipientName = @"[None]";
+        self.recipientMugshot = nil;
+    }
+    if (emailAddresses) {
+        CFRelease(emailAddresses);}
+    
+    // Get mobile number and choose iPhone number over other mobiles
+    // http://stackoverflow.com/questions/1117575/how-do-you-get-a-persons-phone-number-from-the-address-book
+    ABMultiValueRef phones = ABRecordCopyValue(person, kABPersonPhoneProperty);
+    NSString* mobileLabel;
+    for(CFIndex i = 0; i < ABMultiValueGetCount(phones); i++) {
+        
+        //        mobileLabel = (__bridge_transfer NSString *)ABMultiValueCopyLabelAtIndex(phones, i);
+        mobileLabel = CFBridgingRelease(ABMultiValueCopyLabelAtIndex(phones, i));
+        
+        if([mobileLabel isEqualToString:(NSString *)kABPersonPhoneMobileLabel])
+        {
+            //            self.recipientPhone = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phones, i);
+            self.recipientPhone = CFBridgingRelease(ABMultiValueCopyValueAtIndex(phones, i));
+        }
+        else if ([mobileLabel isEqualToString:(NSString*)kABPersonPhoneIPhoneLabel])
+        {
+            //            self.recipientPhone = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phones, i);
+            self.recipientPhone = CFBridgingRelease(ABMultiValueCopyValueAtIndex(phones, i));
+            break ;
+        }
+    }
+    if (phones) {
+        CFRelease(phones);}
+    
+    NSLog(@"MainVC: peoplePickerNavController: Phone Number is: %@", self.recipientPhone);
+    
+    // remove the view controller
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        // EMAIL ADDRESS CHECK.  Ensure recipient actually has an email before loading MapViewController
+        if ([self.recipientEmail isEqualToString:@"[None]"]) {
+            
+            // no email address
+            UIAlertView *alertView = [[UIAlertView alloc]
+                                      initWithTitle:NSLocalizedStringWithDefaultValue(@"ERROR_TITLE_NOEMAIL", nil, [NSBundle mainBundle], @"No email", nil)
+                                      message:NSLocalizedStringWithDefaultValue(@"ERROR_MESSAGE_NOEMAIL", nil, [NSBundle mainBundle], @"The recipient selected does not have an email.  No problem, we'll send them a text message.", nil)
+                                      delegate:nil
+                                      cancelButtonTitle:NSLocalizedStringWithDefaultValue(@"ERROR_DISMISS_OK", nil, [NSBundle mainBundle], @"OK", nil)
+                                      otherButtonTitles:nil, nil];
+            [alertView show];
+            
+            // added 7-2-14 changing the no email process
+            [self performSegueWithIdentifier:@"showMap" sender:self];
+            
+            
+        }
+        else if (![self isStringValidEmail:self.recipientEmail]) {
+            
+            // Not a valid email, so tag it out 7-2-14
+            self.recipientEmail = @"[Invalid]";
+            UIAlertView *alertView = [[UIAlertView alloc]
+                                      initWithTitle:NSLocalizedStringWithDefaultValue(@"ERROR_TITLE_INVALID", nil, [NSBundle mainBundle], @"Invalid email", nil)
+                                      message:NSLocalizedStringWithDefaultValue(@"ERROR_MESSAGE_INVALID", nil, [NSBundle mainBundle], @"Selected recipient does not have a valid email.  No problem, we'll send them a text message.", nil)
+                                      delegate:nil
+                                      cancelButtonTitle:NSLocalizedStringWithDefaultValue(@"ERROR_DISMISS_OK", nil, [NSBundle mainBundle], @"OK", nil)
+                                      otherButtonTitles:nil, nil];
+            
+            [alertView show];
+            
+            // added 7-2-14 changing the invalid email process
+            [self performSegueWithIdentifier:@"showMap" sender:self];
+            
+        }
+        else {
+            // Catchall: valid email
+            // There appears to be a valid email, go ahead and load the MapViewController via segue
+            [self performSegueWithIdentifier:@"showMap" sender:self];
+            
+        }
+    }];
+    
+}
+
+
 
 - (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker {
     
@@ -412,6 +516,8 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
         // completion code
     }];
 }
+
+#pragma mark - Navigation
 
 // In prep for segue set the destination view's property for email
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -1056,7 +1162,7 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 
 // TODOs:
 //
-//
+// - BUG iOS 8.0:  Error message when trying to upload: 'No Location' 'We were not able to determine your location.  Please check that your GPS is on and working.'
 // - TESTING: When I deleted single location share, app popped back to MainVC with badge removed as expected.
 // - FEATURE:  Localize the Settings VC
 // - FUNCTIONALITY: See forced logout todos to be more selective before forcing logout
@@ -1107,7 +1213,7 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 
 // DONE (Version 1.1.1):
 //
-//
+// 11-15-14 - BUG: Address Book updated delegate methods didSelectPerson
 // 11-15-14 - UPDATED IOS: Code in appDelegate to handle deprecated methods related to remote notifications.  http://stackoverflow.com/questions/24216632/remote-notification-ios-8
 // 11-07-14 - HOUSEKEEPING: Repaired directory/name issues preventing linking/compile
 // 11-04-14 - VERSION: Push SmallMacBook version to Git
