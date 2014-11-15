@@ -12,6 +12,7 @@
 
 - (void)viewDidLoad {
     
+    [super viewDidLoad];
     // TODO: Localize text here
     
     // check access GPS is allowed

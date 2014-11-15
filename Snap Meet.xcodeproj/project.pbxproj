@@ -805,7 +805,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/user/Desktop/Developer/ShareMySpot,
+					/Users/chrisjungmann/Desktop/Developer/SnapMeet,
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -829,7 +829,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/user/Desktop/Developer/ShareMySpot,
+					/Users/chrisjungmann/Desktop/Developer/SnapMeet,
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

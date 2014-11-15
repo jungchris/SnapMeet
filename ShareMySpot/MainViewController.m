@@ -309,33 +309,48 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     // Extract Address Book email address using a Bridge Transfer
     ABMultiValueRef emailAddresses = ABRecordCopyValue(person, kABPersonEmailProperty);
     if (ABMultiValueGetCount(emailAddresses) > 0) {
-        self.recipientEmail = (__bridge_transfer NSString*) ABMultiValueCopyValueAtIndex(emailAddresses, 0);
-        self.recipientName = (__bridge_transfer NSString *)ABRecordCopyCompositeName(person);
-        self.recipientMugshot = (__bridge NSData *)ABPersonCopyImageDataWithFormat(person, kABPersonImageFormatThumbnail);              // added 3-10-14
+        
+//        self.recipientEmail = (__bridge_transfer NSString*) ABMultiValueCopyValueAtIndex(emailAddresses, 0);
+//        self.recipientName = (__bridge_transfer NSString *)ABRecordCopyCompositeName(person);
+//        self.recipientMugshot = (__bridge NSData *)ABPersonCopyImageDataWithFormat(person, kABPersonImageFormatThumbnail);
+        
+        // updated 11-15-14 based on WWDC recommended approach
+        self.recipientEmail     = CFBridgingRelease(ABMultiValueCopyValueAtIndex(emailAddresses, 0));
+        self.recipientName      = CFBridgingRelease(ABRecordCopyCompositeName(person));
+        self.recipientMugshot   = CFBridgingRelease(ABPersonCopyImageDataWithFormat(person, kABPersonImageFormatThumbnail));
     }
     else {
+        
         self.recipientEmail = @"[None]";
         self.recipientName = @"[None]";
         self.recipientMugshot = nil;
     }
-    
+    if (emailAddresses) {
+        CFRelease(emailAddresses);}
     
     // Get mobile number and choose iPhone number over other mobiles
     // http://stackoverflow.com/questions/1117575/how-do-you-get-a-persons-phone-number-from-the-address-book
     ABMultiValueRef phones = ABRecordCopyValue(person, kABPersonPhoneProperty);
     NSString* mobileLabel;
     for(CFIndex i = 0; i < ABMultiValueGetCount(phones); i++) {
-        mobileLabel = (__bridge_transfer NSString *)ABMultiValueCopyLabelAtIndex(phones, i);
+        
+//        mobileLabel = (__bridge_transfer NSString *)ABMultiValueCopyLabelAtIndex(phones, i);
+        mobileLabel = CFBridgingRelease(ABMultiValueCopyLabelAtIndex(phones, i));
+        
         if([mobileLabel isEqualToString:(NSString *)kABPersonPhoneMobileLabel])
         {
-            self.recipientPhone = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phones, i);
+//            self.recipientPhone = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phones, i);
+            self.recipientPhone = CFBridgingRelease(ABMultiValueCopyValueAtIndex(phones, i));
         }
         else if ([mobileLabel isEqualToString:(NSString*)kABPersonPhoneIPhoneLabel])
         {
-            self.recipientPhone = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phones, i);
+//            self.recipientPhone = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phones, i);
+            self.recipientPhone = CFBridgingRelease(ABMultiValueCopyValueAtIndex(phones, i));
             break ;
         }
     }
+    if (phones) {
+        CFRelease(phones);}
     
     NSLog(@"MainVC: peoplePickerNavController: Phone Number is: %@", self.recipientPhone);
 
