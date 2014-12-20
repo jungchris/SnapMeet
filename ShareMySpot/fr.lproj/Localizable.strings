@@ -11,7 +11,7 @@
 "MAP_BUTTON"            = "Voir La Carte";
 "FRIENDS_BUTTON"        = "Lieux Référé";
 "ADDRESS_BUTTON"        = "Carnet d'adresses";
-"SETTINGS_BUTTON"       = "Settings";
+"SETTINGS_BUTTON"       = "Réglages";
 "NAME_LABEL"            = "Connecté ";
 
 // retrieveUserInfoFromFB
@@ -30,8 +30,8 @@
 "ERROR_MESSAGE_INVALID" = "Destinataire sélectionné n'a pas une adresse email valide.  Pas de problème, nous allons leur envoyer un message texte";
 
 // MapVC
-"ERROR_TITLE_GPS"       = "Sans Position";
-"ERROR_MESSAGE_GPS"     = "Nous n'étions pas en mesure de déterminer votre position. S'il vous plaît vérifier que votre GPS est allumé et fonctionne.";
+"ERROR_TITLE_GPS"       = "Sans Localisation";
+"ERROR_MESSAGE_GPS"     = "Nous n'étions pas en mesure de déterminer votre position. S'il vous plaît vérifier que votre service de localisation est en marche.";
 
 "SUCCESS_TITLE"         = "Succès!";
 "SUCCESS_MESSAGE"       = "Votre position a été communiqué avec ";
@@ -39,7 +39,7 @@
 "INVITE_TITLE"          = "Compte Destinataire";
 "INVITE_MESSAGE"        = "Le destinataire de ce message n'a pas encore un compte Snap-Meet. Envoyez-lui ou elle une invitation pour télécharger l'application.";
 "INVITE_MESSAGE_FAIL"   = "Pour le moment il n'est pas possible d'envoyer de courriel ou texto";
-"INVITE_UNSELECTED"     = "No recipient has been selected from your address book.  You can send a message manually.";
+"INVITE_UNSELECTED"     = "Aucun lauréat a été sélectionné à partir de votre carnet d'adresses. Vous pouvez envoyer un message manuellement.";
 "INVITE_TEXT"           = "Envoyer message texte";
 "INVITE_EMAIL"          = "Envoyer un courriel";
 "INVITE_SUBJECT"        = "Télécharger Snap-Meet";
@@ -53,7 +53,7 @@
 
 // Login-SignupVC
 "PRIVACY_TITLE"         = "Avis de Confidentialité";
-"PRIVACY_MESSAGE"       = "Nous ne collectons aucune information vous concernant à des fins autres que celles nécessaires à fonction de l'application. Nous ne vendons pas, ni ne louons vos informations à des parties externes. Cette application utilise votre e-mail, nom, nom de l'appareil, et la localisation GPS seulement à vous connecter avec les utilisateurs que vous choisissez. Si vous modifiez votre emplacement, cette information n'est pas mise à jour ou suivie par l'application. Vous pouvez vous connecter soit avec votre courriel ou votre compte Facebook. Cette application ne va pas publier sur votre compte Facebook sans votre permission.";
+"PRIVACY_MESSAGE"       = "Nous ne collectons aucune information vous concernant à des fins autres que celles nécessaires à fonction de l'application. Nous ne vendons pas, ni ne louons vos informations à des parties externes. Cette application utilise votre e-mail, nom, nom de l'appareil, et votre localisation, seulement à vous connecter avec les utilisateurs que vous choisissez. Si vous modifiez votre emplacement, cette information n'est pas mise à jour ou suivie par l'application. Vous pouvez vous connecter soit avec votre courriel ou votre compte Facebook. Cette application ne va pas publier sur votre compte Facebook sans votre permission.";
 
 "FBLOGIN_ERR_TITLE"     = "Erreur de Connexion sur Facebook";
 "FBLOGIN_ERR_MESSAGE"   = "La connexion Facebook a été annulée.";
@@ -70,7 +70,7 @@
 "TIME_SENT"             = "Envoyé à: ";
 
 // DetailVC
-"ERR_TITLE_NOGPSINFO"   = "Données GPS Manquantes";
+"ERR_TITLE_NOGPSINFO"   = "Données de Localisation Manquantes";
 "ERR_MESSAGE_NOGPSINFO" = "L'expéditeur n'a pas inclus les informations de localisation.";
 "SENT_BY"               = "Envoyé par: ";
 

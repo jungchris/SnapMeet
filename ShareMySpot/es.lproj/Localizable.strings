@@ -11,7 +11,7 @@
 "MAP_BUTTON"            = "Ver Mapa";
 "FRIENDS_BUTTON"        = "Lugares Compartidos";
 "ADDRESS_BUTTON"        = "La Libreta";
-"SETTINGS_BUTTON"       = "Settings";
+"SETTINGS_BUTTON"       = "Ajustes";
 "NAME_LABEL"            = "Conectado: ";
 
 // retrieveUserInfoFromFB
@@ -31,7 +31,7 @@
 
 // MapVC
 "ERROR_TITLE_GPS"       = "Sin Ubicación";
-"ERROR_MESSAGE_GPS"     = "No fuimos capaces de determinar su ubicación. Por favor, comprueba que su GPS está encendido y funcionando.";
+"ERROR_MESSAGE_GPS"     = "No fuimos capaces de determinar su ubicación. Por favor, comprueba que su posición está encendido y funcionando.";
 
 "SUCCESS_TITLE"         = "Acierto";
 "SUCCESS_MESSAGE"       = "Su ubicación ha sido compartida con ";
@@ -53,7 +53,7 @@
 
 // Login-SignupVC
 "PRIVACY_TITLE"         = "Aviso de Privacidad";
-"PRIVACY_MESSAGE"       = "No recopilamos información acerca de usted para cualquier propósito que no sea necesario para esta aplicación a funcionar. Nosotros no vendemos, comercializamos ni alquilamos su información. Esta aplicación utiliza su correo electrónico, nombre, nombre del dispositivo y ubicación GPS sólo para conectar con usuarios que usted decide compartir ubicaciones. Si cambia la ubicación, la información no se actualiza o rastreado por esta aplicación. Puede iniciar la sesión, ya sea con un correo electrónico o cuenta de Facebook. Esta aplicación no va a publicar en su cuenta de Facebook sin permiso.";
+"PRIVACY_MESSAGE"       = "No recopilamos información acerca de usted para cualquier propósito que no sea necesario para esta aplicación a funcionar. Nosotros no vendemos, comercializamos ni alquilamos su información. Esta aplicación utiliza su correo electrónico, nombre, nombre del dispositivo y ubicación posición sólo para conectar con usuarios que usted decide compartir ubicaciones. Si cambia la ubicación, la información no se actualiza o rastreado por esta aplicación. Puede iniciar la sesión, ya sea con un correo electrónico o cuenta de Facebook. Esta aplicación no va a publicar en su cuenta de Facebook sin permiso.";
 
 "FBLOGIN_ERR_TITLE"     = "Problema con sesión Facebook";
 "FBLOGIN_ERR_MESSAGE"   = "El inicio de sesión de Facebook se canceló.";
@@ -71,5 +71,5 @@
 
 // DetailVC
 "ERR_TITLE_NOGPSINFO"   = "No Hay Información de Posición";
-"ERR_MESSAGE_NOGPSINFO" = "El remitente no incluyó la información de ubicación GPS. Por favor seleccione otro lugar.";
+"ERR_MESSAGE_NOGPSINFO" = "El remitente no incluyó la información de ubicación posición. Por favor seleccione otro lugar.";
 "SENT_BY"               = "Enviado por: ";

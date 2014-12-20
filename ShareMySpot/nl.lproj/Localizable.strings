@@ -11,7 +11,7 @@
 "MAP_BUTTON"            = "Zie Kaart";
 "FRIENDS_BUTTON"        = "Plaatsen Gedeeld";
 "ADDRESS_BUTTON"        = "Adresboek";
-"SETTINGS_BUTTON"       = "Settings";
+"SETTINGS_BUTTON"       = "Instellingen";
 "NAME_LABEL"            = "Ingelogd: ";
 
 // retrieveUserInfoFromFB
@@ -31,7 +31,7 @@
 
 // MapVC
 "ERROR_TITLE_GPS"       = "Geen Locatie";
-"ERROR_MESSAGE_GPS"     = "We waren niet in staat om uw locatie te bepalen. Controleer of uw GPS is ingeschakeld en werkt.";
+"ERROR_MESSAGE_GPS"     = "We waren niet in staat om uw locatie te bepalen. Controleer of je Location Service is ingeschakeld in Privacy > Locatievoorzieningen.";
 
 "SUCCESS_TITLE"         = "Succes!";
 "SUCCESS_MESSAGE"       = "Uw locatie wordt gedeeld met ";
@@ -70,8 +70,8 @@
 "TIME_SENT"             = "Verzonden op: ";
 
 // DetailVC
-"ERR_TITLE_NOGPSINFO"   = "Geen GPS-gegevens";
-"ERR_MESSAGE_NOGPSINFO" = "De afzender heeft GPS locatie informatie niet bevatten. Selecteer een andere plaats.";
+"ERR_TITLE_NOGPSINFO"   = "Geen Woonplaats";
+"ERR_MESSAGE_NOGPSINFO" = "De afzender heeft locatiegegevens niet bevatten. Selecteer een andere gedeelde plek.";
 "SENT_BY"               = "Die door: ";
 
 

@@ -69,15 +69,20 @@
         [alert show];
 
     } else {
-    
+        
+        NSLog(@"MapVC: Location Services enabled");
+        
         // Initial creation of locationManager object and startMonitoring
         self.locationManager = [[CLLocationManager alloc] init];
+        // iOS 8 requires this
+        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+            [self.locationManager performSelector:@selector(requestWhenInUseAuthorization)];
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         self.locationManager.distanceFilter = kCLDistanceFilterNone;
-
-        // added this 1-20-14 here to remove the need for user to manually update on initial load.
         [self.locationManager startMonitoringSignificantLocationChanges];
+//        [self.locationManager startUpdatingLocation];
+
     }
 }
 
@@ -106,13 +111,15 @@
 // didUpdateToLocation is deprecated, replaced with didUpdateToLocations with an array
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     
+    // The following block was commented out
 //    int objCount = [locations count];
 //    NSLog(@"MapVC: Delegate: didUpdateLocationS - objects count = %u", objCount);
-//    
 //    if (objCount > 1) {
 //        CLLocation *oldLocation = [locations objectAtIndex:objCount - 1];
 //        NSLog(@"Prior location %f,%f",  oldLocation.coordinate.latitude,   oldLocation.coordinate.longitude);
 //    }
+    
+    NSLog(@"MapVC: didUpdateLocations:");
     
     CLLocation *newLocation = [locations lastObject];
     self.currentLocation = newLocation;
@@ -137,7 +144,7 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     UIAlertView *errorAlert = [[UIAlertView alloc]
-                               initWithTitle:NSLocalizedStringWithDefaultValue(@"ERROR_TITLE_GPS", nil, [NSBundle mainBundle], @"GPS error", nil)
+                               initWithTitle:NSLocalizedStringWithDefaultValue(@"ERROR_TITLE_GPS", nil, [NSBundle mainBundle], @"Location Service error", nil)
                                message:NSLocalizedStringWithDefaultValue(@"ERROR_MESSAGE_GPS", nil, [NSBundle mainBundle], @"Unable to get your location.", nil)
                                delegate:nil
                                cancelButtonTitle:NSLocalizedStringWithDefaultValue(@"ERROR_DISMISS", nil, [NSBundle mainBundle], @"Dismiss", nil)

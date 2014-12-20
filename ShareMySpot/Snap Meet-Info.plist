@@ -34,13 +34,17 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.1.123</string>
+	<string>1.1.132</string>
 	<key>FacebookAppID</key>
 	<string>614430848627057</string>
 	<key>FacebookDisplayName</key>
 	<string>Quick Meet</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>The location service is used to determine your location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>The location service is used only to retrieve your location to share with whom you chose.  It is necessary to use location services for the app to function</string>
 	<key>UIMainStoryboardFile</key>
 	<string>MainStoryboard</string>
 	<key>UIRequiredDeviceCapabilities</key>

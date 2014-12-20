@@ -31,7 +31,7 @@
 
 // MapVC
 "ERROR_TITLE_GPS"       = "No Location";
-"ERROR_MESSAGE_GPS"     = "We were not able to determine your location.  Please check that your GPS is on and working.";
+"ERROR_MESSAGE_GPS"     = "We were not able to determine your location.  Please check that your Location Service is enabled in Privacy > Settings.";
 
 "SUCCESS_TITLE"         = "Success!";
 "SUCCESS_MESSAGE"       = "Your location has been shared with ";
@@ -53,7 +53,7 @@
 
 // Login-SignupVC
 "PRIVACY_TITLE"         = "Privacy Notice";
-"PRIVACY_MESSAGE"       = "We do not collect information about you for any purpose other than as needed for this app to function.  We do not sell, trade, or rent your information to outside parties.  This app uses your email, name, device name and GPS location ONLY to connect you with users you choose to share locations with.  If you change location, that information is not updated or tracked by this app.  You can log in with either an email or Facebook account.  This app will not post to your Facebook account without your permission.";
+"PRIVACY_MESSAGE"       = "We do not collect information about you for any purpose other than as needed for this app to function.  We do not sell, trade, or rent your information to outside parties.  This app uses your email, name, device name and location ONLY to connect you with users you choose to share locations with.  If you change location, that information is not updated or tracked by this app.  You can log in with either an email or Facebook account.  This app will not post to your Facebook account without your permission.";
 
 "FBLOGIN_ERR_TITLE"     = "Facebook Login Error";
 "FBLOGIN_ERR_MESSAGE"   = "The Facebook login was cancelled.";
@@ -70,8 +70,8 @@
 "TIME_SENT"             = "Sent at: ";
 
 // DetailVC
-"ERR_TITLE_NOGPSINFO"   = "No GPS Data";
-"ERR_MESSAGE_NOGPSINFO" = "The sender didn't include GPS location information.  Please select another shared place.";
+"ERR_TITLE_NOGPSINFO"   = "No Location Sent";
+"ERR_MESSAGE_NOGPSINFO" = "The sender didn't include location information.  Please select another shared place.";
 "SENT_BY"               = "Sent by: ";
 
 

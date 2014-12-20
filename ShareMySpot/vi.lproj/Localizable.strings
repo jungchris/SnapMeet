@@ -11,7 +11,7 @@
 "MAP_BUTTON"            = "Xem bản đồ";
 "FRIENDS_BUTTON"        = "Xem điểm";
 "ADDRESS_BUTTON"        = "Sổ địa chỉ";
-"SETTINGS_BUTTON"       = "sự sắp đặt";
+"SETTINGS_BUTTON"       = "Cài đặt";
 "NAME_LABEL"            = "đăng nhập: ";
 
 // retrieveUserInfoFromFB
@@ -31,7 +31,7 @@
 
 // MapVC
 "ERROR_TITLE_GPS"       = "Không có vị trí";
-"ERROR_MESSAGE_GPS"     = "Chúng tôi không thể xác định vị trí của bạn. Hãy kiểm tra xem GPS của bạn nằm trên và làm việc.";
+"ERROR_MESSAGE_GPS"     = "Chúng tôi không thể xác định vị trí của bạn. Hãy kiểm tra xem dịch vụ vị trí của bạn đang chạy.";
 
 "SUCCESS_TITLE"         = "Sự thành công";
 "SUCCESS_MESSAGE"       = "Vị trí của bạn đã được chia sẻ với ";
@@ -39,7 +39,7 @@
 "INVITE_TITLE"          = "Tài khoản người nhận";
 "INVITE_MESSAGE"        = "Người nhận thông báo này không có một tài khoản Snap-Meet gỡ được nêu ra. Gửi cho họ một lời mời để tải về Snap-Meet gỡ";
 "INVITE_MESSAGE_FAIL"   = "Không thể gửi tin nhắn hoặc thư điện tử.";
-"INVITE_UNSELECTED"     = "No recipient has been selected from your address book.  You can send a message manually.";
+"INVITE_UNSELECTED"     = "Không có người nhận đã được chọn từ sổ địa chỉ của bạn. Bạn có thể gửi tin nhắn bằng tay.";
 "INVITE_TEXT"           = "Gửi tin nhắn văn bản";
 "INVITE_EMAIL"          = "Gửi tin nhắn email";
 "INVITE_SUBJECT"        = "Đi được phần mềm Snap-Meet";
@@ -53,7 +53,7 @@
 
 // Login-SignupVC
 "PRIVACY_TITLE"         = "Thông Báo";
-"PRIVACY_MESSAGE"       = "Chúng tôi không thu thập thông tin về bạn cho bất kỳ mục đích nào khác hơn là cần thiết cho các ứng dụng này hoạt động. Chúng tôi không bán, thương mại, hoặc cho thuê thông tin của bạn cho bên ngoài. Ứng dụng này sử dụng thư điện tử, tên, tên thiết bị của bạn và vị trí GPS chỉ để kết nối bạn với người sử dụng mà bạn chọn để chia sẻ địa điểm với. Nếu bạn thay đổi vị trí, thông tin đó không được cập nhật hoặc theo dõi bởi ứng dụng này. Bạn có thể đăng nhập với tài khoản Facebook hoặc một email hoặc. Ứng dụng này sẽ không gửi vào tài khoản Facebook của bạn mà không cần sự cho phép của bạn.";
+"PRIVACY_MESSAGE"       = "Chúng tôi không thu thập bất kỳ thông tin về bạn cho các mục đích khác hơn so với những người cần thiết để phù hợp với các ứng dụng. Chúng tôi không bán hoặc cho thuê thông tin của bạn cho bên ngoài. Ứng dụng này sử dụng e-mail của bạn, tên, tên thiết bị, và vị trí của bạn, chỉ cần kết nối với người sử dụng mà bạn chọn. Nếu bạn thay đổi vị trí của bạn, thông tin này không được cập nhật hoặc theo sau bởi các ứng dụng. Bạn có thể đăng nhập bằng hoặc email hoặc tài khoản Facebook của bạn. Ứng dụng này sẽ không gửi vào tài khoản Facebook của bạn mà không cần sự cho phép của bạn.";
 
 "FBLOGIN_ERR_TITLE"     = "Lỗi đăng nhập Facebook";
 "FBLOGIN_ERR_MESSAGE"   = "Đăng nhập Facebook đã bị hủy bỏ.";
@@ -70,8 +70,8 @@
 "TIME_SENT"             = "Gửi tại: ";
 
 // DetailVC
-"ERR_TITLE_NOGPSINFO"   = "Không có dữ liệu GPS";
-"ERR_MESSAGE_NOGPSINFO" = "Người gửi không bao gồm thông tin vị trí GPS. Hãy chọn một nơi khác.";
+"ERR_TITLE_NOGPSINFO"   = "Thiếu Thông Tin";
+"ERR_MESSAGE_NOGPSINFO" = "Người gửi không bao gồm thông tin vị trí.";
 "SENT_BY"               = "Gửi bởi: ";
 
 
