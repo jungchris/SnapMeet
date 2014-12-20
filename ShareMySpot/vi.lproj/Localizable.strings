@@ -19,12 +19,12 @@
 "ERROR_MESSAGE_CONNECT" = "Kết nối với Internet Xuất hiện được ẩn. Vui lòng kiểm tra đó bạn đang không ở trong chế độ máy bay.";
 // showFormattedError
 "ERROR_TITLE"           = "Rất tiếc";
-"ERROR_DISMISS"         = "chận đường";
+"ERROR_DISMISS"         = "Hủy";
 
 // peoplePickerNavigationController
 "ERROR_TITLE_NOEMAIL"   = "Không có email";
 "ERROR_MESSAGE_NOEMAIL" = "Người nhận được chọn không có một email trong sổ địa chỉ của bạn. Không có vấn đề, chúng tôi sẽ gửi cho họ một tin nhắn văn bản";
-"ERROR_DISMISS_OK"      = "cách chức";
+"ERROR_DISMISS_OK"      = "Hủy";
 
 "ERROR_TITLE_INVALID"   = "Email không hợp lệ";
 "ERROR_MESSAGE_INVALID" = "Người nhận chọn không có một email hợp lệ.  Không có vấn đề, chúng tôi sẽ gửi cho họ một tin nhắn văn bản";

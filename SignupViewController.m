@@ -40,9 +40,9 @@
     NSString *userPassword = [self.passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *userName = [self.nameField.text stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     
-    NSLog(@"userEmail: %@", userEmail);
-    NSLog(@"userPassword: %@", userPassword);
-    NSLog(@"userName: %@", userName);
+//    NSLog(@"userEmail: %@", userEmail);
+//    NSLog(@"userPassword: %@", userPassword);
+//    NSLog(@"userName: %@", userName);
     
     if (![self isStringValidEmail:userEmail]) {
         

@@ -26,7 +26,7 @@
     [super viewDidLoad];
     
     // test access to emailAddr posted from MainViewController
-    NSLog(@"MapVC: viewDidLoad with email %@", self.recipientEmail);
+//    NSLog(@"MapVC: viewDidLoad with email %@", self.recipientEmail);
     
     // set the device name to identify the sender in a more friendly manner.  2-14-14
     self.deviceName = [[UIDevice currentDevice] name];
@@ -58,32 +58,34 @@
     // + (CLAuthorizationStatus)authorization  -   kCLAuthorizationStatusDenied
     
     // check if location services are enabled
-    if (![CLLocationManager locationServicesEnabled]) {
-        NSLog(@"MapVC: Location Services NOT enabled");
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Service Disabled"
-                                                        message:@"To re-enable, please go to Settings and turn on Location Service for Snap Meet."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-
-    } else {
-        
-        NSLog(@"MapVC: Location Services enabled");
-        
-        // Initial creation of locationManager object and startMonitoring
-        self.locationManager = [[CLLocationManager alloc] init];
-        // iOS 8 requires this
-        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
-            [self.locationManager performSelector:@selector(requestWhenInUseAuthorization)];
-        self.locationManager.delegate = self;
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        self.locationManager.distanceFilter = kCLDistanceFilterNone;
-        [self.locationManager startMonitoringSignificantLocationChanges];
-//        [self.locationManager startUpdatingLocation];
-
-    }
+//    if (![CLLocationManager locationServicesEnabled]) {
+//        NSLog(@"MapVC: Location Services NOT enabled");
+//        
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Service Disabled"
+//                                                        message:@"To re-enable, please go to Settings and turn on Location Service for Snap Meet."
+//                                                       delegate:nil
+//                                              cancelButtonTitle:@"OK"
+//                                              otherButtonTitles:nil];
+//        [alert show];
+//
+//    } else {
+//        
+//        NSLog(@"MapVC: Location Services enabled");
+//        // Initial creation of locationManager object and startMonitoring
+//        self.locationManager = [[CLLocationManager alloc] init];
+//        // iOS 8 requires this
+//        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+//            [self.locationManager performSelector:@selector(requestWhenInUseAuthorization)];
+//        self.locationManager.delegate = self;
+//        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+//        self.locationManager.distanceFilter = kCLDistanceFilterNone;
+//        [self.locationManager startMonitoringSignificantLocationChanges];
+////        [self.locationManager startUpdatingLocation];
+//    }
+    
+    // revised location service activation
+    [self determineLocation:YES];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -100,26 +102,64 @@
 
 #pragma mark - Location methods
 
-- (void) getLocation {
-    
-    // recommended use of this method instead to get an initial location.  Uses fewer resources.
-    [self.locationManager startMonitoringSignificantLocationChanges];   //    [self.locationManager startUpdatingLocation];
+// Deprecated
+//- (void) getLocation {
+//    
+//    // recommended use of this method instead to get an initial location.  Uses fewer resources.
+//    [self.locationManager startMonitoringSignificantLocationChanges];   //    [self.locationManager startUpdatingLocation];
+//}
+
+// activate or deactivate location service, added from Act 420 app
+- (void)determineLocation:(BOOL)activated {
+    // 'activated' drives the process on/off
+    if (activated) {
+        // check if user disabled the service
+        if (([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) || ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted)) {
+            NSLog(@"Location Service Denied or Restricted");
+            return;
+        }
+        // check device capability before alloc/init which can cause exception if device not capable
+        if (![CLLocationManager locationServicesEnabled]) {
+            NSLog(@"Location Service Disabled");
+            
+        } else {
+            // let's activate, but first check if it's already active
+            if (self.locationManager) {
+                // already allocated and initialized, just activate
+                [self.locationManager startMonitoringSignificantLocationChanges];
+                
+            } else {
+                
+                // Initial creation of locationManager object and startMonitoring
+                self.locationManager = [[CLLocationManager alloc] init];
+                // iOS 8 requires this
+                if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+                    [self.locationManager performSelector:@selector(requestWhenInUseAuthorization)];
+                self.locationManager.delegate = self;
+                self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+                self.locationManager.distanceFilter = kCLDistanceFilterNone;
+                [self.locationManager startUpdatingLocation];
+            }
+        }
+    } else {
+        // shut her down
+        if ([CLLocationManager locationServicesEnabled]) {
+            
+            if (self.locationManager) {
+                [self.locationManager stopUpdatingLocation];
+                self.locationManager = nil;
+            }
+        }
+    }
 }
+
 
 #pragma mark - CLLocationManagerDelegates
 
 // didUpdateToLocation is deprecated, replaced with didUpdateToLocations with an array
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     
-    // The following block was commented out
-//    int objCount = [locations count];
-//    NSLog(@"MapVC: Delegate: didUpdateLocationS - objects count = %u", objCount);
-//    if (objCount > 1) {
-//        CLLocation *oldLocation = [locations objectAtIndex:objCount - 1];
-//        NSLog(@"Prior location %f,%f",  oldLocation.coordinate.latitude,   oldLocation.coordinate.longitude);
-//    }
-    
-    NSLog(@"MapVC: didUpdateLocations:");
+//    NSLog(@"MapVC: didUpdateLocations:");
     
     CLLocation *newLocation = [locations lastObject];
     self.currentLocation = newLocation;
@@ -127,7 +167,7 @@
     if(newLocation.horizontalAccuracy <= 100.0f){
         
         [self.locationManager stopUpdatingLocation];
-        NSLog(@"MapVC: Delegate: didUpdateLocationS - stopUpdatingLocation");
+//        NSLog(@"MapVC: Delegate: didUpdateLocationS - stopUpdatingLocation");
     }
     
     CLLocationCoordinate2D myCoordinate = newLocation.coordinate;                                   // newLocation.coordinate.longitude and latitude properties
@@ -157,7 +197,7 @@
 // this delegate is called when the map is finished rendering completely
 - (void)mapViewDidFinishRenderingMap:(MKMapView *)mapView fullyRendered:(BOOL)fullyRendered {
     
-    NSLog(@"MapVC: Delegate: mapViewDidFinishRenderingMap:fullyRendered");
+//    NSLog(@"MapVC: Delegate: mapViewDidFinishRenderingMap:fullyRendered");
     
     // Call renderToImage and save image property
     self.mapImage = [self renderToImage:self.mapView];
@@ -168,7 +208,7 @@
 
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView {
     
-    NSLog(@"MapVC: Delegate: mapViewDidFinishLoadingMap");
+//    NSLog(@"MapVC: Delegate: mapViewDidFinishLoadingMap");
     
 }
 
@@ -191,7 +231,7 @@
 }
 
 - (void)bannerViewActionDidFinish:(ADBannerView *)banner {
-    NSLog(@"MapVC: Delegate: bannerViewActionDidFinish");
+//    NSLog(@"MapVC: Delegate: bannerViewActionDidFinish");
 }
 
 //This method adds shared adbannerview to the current view and sets its location to bottom of screen
@@ -243,7 +283,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-    NSLog(@"MpViewController: imgePickerController");
+//    NSLog(@"MaViewController: imagePickerController");
     // check if photo or video (Uses <MobileCoreServices/UTCoreTypes.h>)
     NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
@@ -295,8 +335,8 @@
 // Modified this to properly handle index when there is only one device in list of capabilities (using kAlertView tag)
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
 
-    NSLog(@"---> Button index %li", (long)buttonIndex);
-    NSLog(@"---> Number of buttons %li", (long)[alertView numberOfButtons]);
+//    NSLog(@"---> Button index %li", (long)buttonIndex);
+//    NSLog(@"---> Number of buttons %li", (long)[alertView numberOfButtons]);
 
     if (alertView.tag == kAlertViewBoth) {
         
@@ -353,7 +393,7 @@
 
 - (IBAction)sendLocationButton:(id)sender {
     
-    NSLog(@"sendLocationButton: Current GPS location: %f", self.currentLocation.coordinate.latitude);
+//    NSLog(@"sendLocationButton: Current GPS location: %f", self.currentLocation.coordinate.latitude);
     
     // 06-24-14 check if the user is logged in and show login screen if not
     if (!self.senderName) {
@@ -365,7 +405,7 @@
     if (self.currentLocation.coordinate.latitude == 0.0 && self.currentLocation.coordinate.longitude == 0.0) {
         
         // show error message missing GPS coordinates
-        NSLog(@"===> Missing GPS location");
+        NSLog(@"=> Missing GPS location");
         UIAlertView *errorAlert = [[UIAlertView alloc]
                                    initWithTitle:NSLocalizedStringWithDefaultValue(@"ERROR_TITLE_GPS", nil, [NSBundle mainBundle], @"GPS error", nil)
                                    message:NSLocalizedStringWithDefaultValue(@"ERROR_MESSAGE_GPS", nil, [NSBundle mainBundle], @"Unable to get your location.", nil)
@@ -453,7 +493,7 @@
     // check if map image exists
     if (self.mapImage != nil) {
         
-        NSLog(@"---> uploadMap: image Ok.");
+//        NSLog(@"---> uploadMap: image Ok.");
         
         // could also look at device specs
         UIImage *newImage = [self resizeImage:self.mapImage toWidth:320.0f andHeight:480.0f];
@@ -464,7 +504,7 @@
     }
     else {
 
-        NSLog(@"---> uploadMap: no image.");
+//        NSLog(@"---> uploadMap: no image.");
 
         // set values to nil
         mapFileData = nil;
@@ -480,7 +520,7 @@
     // check if user took a photo
     if (self.snapshot != nil) {
         
-        NSLog(@"---> uploadSnapshot: got an image to process");
+//        NSLog(@"---> uploadSnapshot: got an image to process");
         // could look at device specs, but let's not for now
         UIImage *newImage = [self resizeImage:self.snapshot toWidth:320.0f andHeight:480.0f];
         
@@ -490,7 +530,7 @@
         
     } else {
         
-        NSLog(@"---> uploadSnapshot: no image.");
+//        NSLog(@"---> uploadSnapshot: no image.");
         // Add code to support videos in V2.0 (maybe)
         //        fileData = [NSData dataWithContentsOfFile:self.videoFilePath];
         //        fileName = @"video.mov";
@@ -530,7 +570,7 @@
             // check to see if there's also a snapshot to upload
             if (self.snapshot != nil) {
                 
-                NSLog(@"---> ... Uploading snapshot!");
+//                NSLog(@"---> ... Uploading snapshot!");
                 
                 PFFile *snapPFFile = [PFFile fileWithName:snapFileName data:snapFileData];
                 [snapPFFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -575,7 +615,7 @@
     currentUser = [PFUser currentUser];
     
     // recipient info
-    NSLog(@"MapVC: save-UserLocation: email: %@", self.recipientEmail);
+//    NSLog(@"MapVC: save-UserLocation: email: %@", self.recipientEmail);
     if (self.recipientEmail) {
         userLocation[@"emailAddress"] = self.recipientEmail;
     }
@@ -628,7 +668,7 @@
             [successMsg appendString:NSLocalizedStringWithDefaultValue(@"SUCCESS_MESSAGE", nil, [NSBundle mainBundle], @"Location shared with ", nil)];
             [successMsg appendString:self.recipientEmail];
             
-            NSLog(@"sendLocationButton:Success: %@", successMsg);
+//            NSLog(@"sendLocationButton:Success: %@", successMsg);
             UIAlertView *alertView = [[UIAlertView alloc]
                                       initWithTitle:NSLocalizedStringWithDefaultValue(@"SUCCESS_TITLE", nil, [NSBundle mainBundle], @"Success!", nil)
                                       message:successMsg
@@ -658,14 +698,14 @@
         if (error) {
             
             // error completing query
-            NSLog(@"===> unable to checkRecipientAccount");
+            NSLog(@"=> unable to checkRecipientAccount");
             
             [self showFormattedError:error];
             
         } else {
             
             // recipient exists
-            NSLog(@"MapVC: checkRecipientAccount: objects count: %lu", (unsigned long)objects.count);
+//            NSLog(@"MapVC: checkRecipientAccount: objects count: %lu", (unsigned long)objects.count);
 
             if (objects.count == 0) {
                 
@@ -865,7 +905,7 @@
                                       nil];
     
     // debug since adding FB integration
-    NSLog(@"MapVC: [PUSH] ... push notification user email: [%@]", self.recipientEmail);
+//    NSLog(@"MapVC: [PUSH] ... push notification user email: [%@]", self.recipientEmail);
     
     // create our installation query
     PFQuery *pushQuery = [PFInstallation query];

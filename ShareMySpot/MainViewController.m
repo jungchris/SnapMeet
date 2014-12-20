@@ -27,8 +27,6 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 {
     [super viewDidLoad];
     
-    NSLog(@"viewDidLoad");
-    
     // locations counter
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.locationsCount = 0;
@@ -55,14 +53,13 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     // on standard login c-rrentUser.username = chris@ipip.com and cUrrentUser.email = null so do additional 'if'
     if (self.currentUser) {
         
-        // TODO: Get user's name
-        NSLog(@" ---> [firstAndLast] %@", [self.currentUser objectForKey:@"firstAndLast"]);
+        // Get user's name
+//        NSLog(@" ---> [firstAndLast] %@", [self.currentUser objectForKey:@"firstAndLast"]);
         self.currentUserName = [self.currentUser objectForKey:@"firstAndLast"];
         
         // Get the user's facebook URL added 4-23-14
         NSDictionary *profileDict = [self.currentUser objectForKey:@"profile"];
         NSString *pictURL = [profileDict objectForKey:@"pictureURL"];
-        NSLog(@" ---> [pictURL] %@", pictURL);
         self.currentUserURL = pictURL;
 
         // since retrieveUserInfoFromFB is asynchronous don't call rtrieveLocations if email is null
@@ -114,8 +111,6 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 {
     [super viewWillAppear:animated];
     // Used this to debug view crash issue.  Resolved in shareLocationButton using class method.
-
-    NSLog(@"viewWillAppear");
     
 //    self.currentUser = [PFUser currentUser];
     
@@ -154,8 +149,6 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 - (void)enterForegroundHandler {
     
 //    self.currentUser = [PFUser currentUser];
-    
-    NSLog(@"self.currentUser.email: %@", self.currentUser.email);
     
     // update locations for standard user 3-14-14
     // removed && self.crrentFBUserEmail == NULL
@@ -204,8 +197,6 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 
 // handler for LoginViewControllerDelegate
 - (void)loginViewHandler:(LoginViewController *)lvc handleObject:(id)object {
-    
-    NSLog(@"MainVC: [delegate] loginViewHandler:");
     
     NSArray *userArray = object;
     if (![userArray isKindOfClass:[NSArray class]]) {
@@ -269,8 +260,6 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 // Running this is important on new user sign up.  We need to look for any shared locations and present them.
 - (void)sendItemToMainVC:(LoginViewController *)lvc signupItem:(NSString *)email withName:(NSString *)name {
     
-    NSLog(@" ===> sendItemToMainVC");
-    
     self.currentUserEmail = email;             // what?  Is this the recipient email or user?
     self.currentUserName = name;
     
@@ -290,8 +279,6 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 // implement the required methods for the ABPeopleNavigationControler
 - (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
     
-    NSLog(@"MainVC: peoplePicker shouldContinueAfterSelectingPerson:person property identifier");
-    
     // remove the address book view
     [self dismissViewControllerAnimated:YES completion:^{
         //
@@ -305,8 +292,6 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 
 // deprecated in iOS 8
 - (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *) peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person {
-    
-    NSLog(@"MainVC: peoplePickerNavController:peoplePicker shouldContinueAfterSelectingPerson");
     
     // Extract Address Book email address using a Bridge Transfer
     ABMultiValueRef emailAddresses = ABRecordCopyValue(person, kABPersonEmailProperty);
@@ -354,8 +339,7 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     if (phones) {
         CFRelease(phones);}
     
-    NSLog(@"MainVC: peoplePickerNavController: Phone Number is: %@", self.recipientPhone);
-
+//    NSLog(@"MainVC: peoplePickerNavController: Phone Number is: %@", self.recipientPhone);
     // remove the view controller
     [self dismissViewControllerAnimated:YES completion:^{
         
@@ -409,8 +393,6 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 // only diff in code is this is void while original return BOOL.
 - (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person {
     
-    NSLog(@"MainVC: peoplePickerNavigationController:peoplePicker didSelectPerson");
-    
     // Extract Address Book email address using a Bridge Transfer
     ABMultiValueRef emailAddresses = ABRecordCopyValue(person, kABPersonEmailProperty);
     if (ABMultiValueGetCount(emailAddresses) > 0) {
@@ -457,7 +439,7 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     if (phones) {
         CFRelease(phones);}
     
-    NSLog(@"MainVC: peoplePickerNavController: Phone Number is: %@", self.recipientPhone);
+//    NSLog(@"MainVC: peoplePickerNavController: Phone Number is: %@", self.recipientPhone);
     
     // remove the view controller
     [self dismissViewControllerAnimated:YES completion:^{
@@ -510,8 +492,6 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 
 - (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker {
     
-    NSLog(@"[delegate] MainViewController:peoplePickerNavigationControllerDidCancel");
-    
     [self dismissViewControllerAnimated:YES completion:^{
         // completion code
     }];
@@ -524,11 +504,9 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     
     if ([segue.identifier isEqualToString:@"showMap"]) {
         
-        NSLog(@"MainVC: prepareForSegue: showMap");
-        
 //        NSLog(@"... MainVC: c-rrentFBUserName = %@", self.currentFBUserName);
 //        NSLog(@"... MainVC: c-rrentUser.username = %@", self.currentUser.username);
-        NSLog(@"...> MainVC: c-rrentUserURL = %@", self.currentUserURL);
+//        NSLog(@"...> MainVC: c-rrentUserURL = %@", self.currentUserURL);
         
         // set emilAddr & rcipientName property in MpViewController
         MapViewController *mvc = [segue destinationViewController];
@@ -658,7 +636,7 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     
     if (ver_float < 7.1) {
         
-        NSLog(@" ===> NOTICE: OLDER VERSION");
+        NSLog(@" ===> NOTICE: OLDER iOS THANK 7.1 VERSION");
         // Using Class method instead on versions 7.0.3, 7.0.4.
         ABPeoplePickerNavigationController *picker = [[self class] sharedPeoplePicker];
         //    picker.peoplePickerDelegate = self;           // kif-kif
@@ -668,8 +646,6 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     } else {
         
         // ios 7.1 or greater
-        NSLog(@" ===> NOTICE: VERSION 7.1 or GREATER");
-        
         // Original code used to invoke address book picker.  Use this when iOS 7.0.3 bug on iPhone 4/4S is fixed.
         ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
         [picker setPeoplePickerDelegate:self];
@@ -684,11 +660,8 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 
 - (void)loadSettings:(id)sender {
     
-    NSLog(@"MainVC: showSettings");
-    
     // segue to the app settings screen
     [self performSegueWithIdentifier:@"showSettings" sender:self];
-    
 }
 
 
@@ -702,9 +675,6 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     [SharedAdBannerView setHidden:YES];
 }
 
-- (void)bannerViewActionDidFinish:(ADBannerView *)banner {
-    NSLog(@"MainVC: bannerViewActionDidFinish");
-}
 
 //This method adds shared adbannerview to the current view and sets its location to bottom of screen
 //Should work on all devices
@@ -860,7 +830,6 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 {
     // get the locations object from Parse.com & set 'locations' property of LocationsViewController
     // moved this code from LocationsViewController
-    NSLog(@"MainVC: retreiveLocations");
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
@@ -1029,7 +998,6 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
         }
     } else {
         // there are no locations being shared, so let's hide the button and b-adge after checking to make sure was created previously.
-        NSLog(@"... MainVC: locationsCount = 0");
         
         if (self.badge) {
             [self.view sendSubviewToBack:self.badge];
@@ -1162,7 +1130,6 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 
 // TODOs:
 //
-// - BUG iOS 8.0:  Error message when trying to upload: 'No Location' 'We were not able to determine your location.  Please check that your GPS is on and working.'
 // - TESTING: When I deleted single location share, app popped back to MainVC with badge removed as expected.
 // - FEATURE:  Localize the Settings VC
 // - FUNCTIONALITY: See forced logout todos to be more selective before forcing logout
@@ -1213,6 +1180,10 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 
 // DONE (Version 1.1.1):
 //
+// 12-20-14 - HOUSEKEEPING: Removed unneeded NSLog messages
+// 12-20-14 - BUG iOS 8.0:  Error message when trying to upload: 'No Location' 'We were not able to determine your location.  Please check that your GPS is on and working.'
+// 12-20-14 - UPDATED IOS: Updated deprecated NSNotification method warnings
+// 12-20-14 - LOOK & FEEL: Fixed some missing localization language
 // 11-15-14 - BUG: Address Book updated delegate methods didSelectPerson
 // 11-15-14 - UPDATED IOS: Code in appDelegate to handle deprecated methods related to remote notifications.  http://stackoverflow.com/questions/24216632/remote-notification-ios-8
 // 11-07-14 - HOUSEKEEPING: Repaired directory/name issues preventing linking/compile

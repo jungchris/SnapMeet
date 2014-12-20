@@ -37,7 +37,7 @@
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
     
-    NSLog(@"LocationsVC - Current user is: %@", self.currentUser.email);
+//    NSLog(@"LocationsVC - Current user is: %@", self.currentUser.email);
     
     // need to register nib before using LocationTableCell
     [self.tableView registerNib:[UINib nibWithNibName:@"LocationTableCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"LocationTableCell"];

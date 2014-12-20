@@ -16,7 +16,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-    NSLog(@"[application]: didFinishLaunchingWithOptions");
+//    NSLog(@"[application]: didFinishLaunchingWithOptions");
 
     [Parse setApplicationId:@"Kpj3EaiTKvG9DTnQcxr3HvifFS5tX4ShOW3Mw5z6"
                   clientKey:@"AYnqQ0Kxz69wTSb2KloXNuvtn1jIK9fh26qPZeOT"];
@@ -46,8 +46,11 @@
         
     } else {
         
-        // this code is used for version prior to iOS 8.0
+        // Register for Push Notifications before iOS 8
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
         [application registerForRemoteNotificationTypes: UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
+#pragma GCC diagnostic pop
 
     }
     
@@ -74,7 +77,7 @@
 // succesful completion of the registration process
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
     // Store the deviceToken in the current installation and save it to Parse.
-    NSLog(@"[application]: didRegisterForRemoteNotificationsWithDeviceToken");
+//    NSLog(@"[application]: didRegisterForRemoteNotificationsWithDeviceToken");
 
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:newDeviceToken];
@@ -95,7 +98,7 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     // notification is received while the app is active, ask Parse to handle it for us.
-    NSLog(@"[application]: didReceiveRemoteNotification");
+//    NSLog(@"[application]: didReceiveRemoteNotification");
     
     [PFPush handlePush:userInfo];
     
@@ -106,21 +109,21 @@
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state.
-    NSLog(@"[application]: applicationWillResignActive");
+//    NSLog(@"[application]: applicationWillResignActive");
     
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     // Use this method to release shared resources, save user data, invalidate timers.
-    NSLog(@"[application]: applicationDidEnterBackground");
+//    NSLog(@"[application]: applicationDidEnterBackground");
 
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state.
-    NSLog(@"[application]: applicationWillEnterForeground");
+//    NSLog(@"[application]: applicationWillEnterForeground");
 
     // Set up notification to reset the badge count if app becomes active from the background.
     [[NSNotificationCenter defaultCenter] postNotificationName:@"enterForeground" object:nil];
@@ -130,7 +133,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive.
-    NSLog(@"[application]: applicationDidBecomeActive");
+//    NSLog(@"[application]: applicationDidBecomeActive");
     
     // Integrated login Parse with FB
     [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
@@ -142,7 +145,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate.
-    NSLog(@"[application]: applicationWillTerminate");
+//    NSLog(@"[application]: applicationWillTerminate");
     
     [[PFFacebookUtils session] close];
 

@@ -84,9 +84,9 @@
                 
                 if (userName.length > 1 && userEmail.length > 6) {
                     
-                    NSLog(@"===> LoginVC:loginButton");
-                    NSLog(@"... userName %@", userName);
-                    NSLog(@"... userEmail %@", userEmail);
+//                    NSLog(@"===> LoginVC:loginButton");
+//                    NSLog(@"... userName %@", userName);
+//                    NSLog(@"... userEmail %@", userEmail);
                     
                     NSArray *userArray = [[NSArray alloc] initWithObjects:[userEmail copy], [userName copy], nil];
                     [delegate loginViewHandler:self handleObject:userArray];
@@ -212,13 +212,11 @@
                 }
             }
         } else if (user.isNew) {
-            NSLog(@"LoginVC: New user with facebook signed up and logged in!");
-
+//            NSLog(@"LoginVC: New user with facebook signed up and logged in!");
             [self retrieveUserInfoFromFB];
             
         } else {
-            NSLog(@"LoginVC: User with facebook logged in!");
-            
+//            NSLog(@"LoginVC: User with facebook logged in!");
             [self retrieveUserInfoFromFB];
             
         }
@@ -280,7 +278,7 @@
 
 - (void)retrieveUserInfoFromFB {
     
-    NSLog(@"LoginVC: retreiveUserInfoFromFB");
+//    NSLog(@"LoginVC: retreiveUserInfoFromFB");
     
     // Send request to Facebook
     FBRequest *request = [FBRequest requestForMe];
@@ -338,19 +336,19 @@
             // make the login view handler delegate call in MainViewController
             if (userEmail && userName && userURL) {
                 
-                NSLog(@"LoginVC: [call] lginViewHandler delegate with userEmail, userName, userURL");
+//                NSLog(@"LoginVC: [call] loginViewHandler delegate with userEmail, userName, userURL");
                 NSArray *userArray = [[NSArray alloc] initWithObjects:[userEmail copy], [userName copy], [userURL copy], nil];
                 [delegate loginViewHandler:self handleObject:userArray];
             }
             else if (userEmail && userName) {
                 
-                NSLog(@"LoginVC: [call] lginViewHandler delegate with userEmail and userName");
+//                NSLog(@"LoginVC: [call] loginViewHandler delegate with userEmail and userName");
                 NSArray *userArray = [[NSArray alloc] initWithObjects:[userEmail copy], [userName copy], nil];
                 [delegate loginViewHandler:self handleObject:userArray];
             }
             else if (userEmail) {
 
-                NSLog(@"LoginVC: [call] lginViewHandler delegate with userEmail");
+//                NSLog(@"LoginVC: [call] loginViewHandler delegate with userEmail");
                 NSArray *userArray = [[NSArray alloc] initWithObjects:[userEmail copy], nil];
                 [delegate loginViewHandler:self handleObject:userArray];
             } else {
