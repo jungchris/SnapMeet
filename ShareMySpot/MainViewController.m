@@ -1148,7 +1148,6 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 
 // TODOs:
 //
-// - TESTING: When I deleted single location share, app popped back to MainVC with badge removed as expected.
 // - FEATURE:  Localize the Settings VC
 // - FUNCTIONALITY: See forced logout todos to be more selective before forcing logout
 // - FEATURE: Consider allowing entry into app without logging in per WWDC2014 #230 "Skip for now"
@@ -1198,8 +1197,10 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 //
 // DONE (Version 1.1.2):
 //
+// 04-29-16 (0.25) - Uploaded 1.1.2 build #29 - 4.5 hours
+// 04-29-16 (0.25) - Analyzed using Xcode and cleaned warnings. Set to Xcode recommended settings.
 // 04-29-16 (0.75) - Snapshot is not being sent. Image received is skewed. Images are Ok in Parse. Found Parse uses HTTP in it's PFFile object. Used a simple trick to override to use AWS with https: http://hackingtheimpossible.com/quick-tip-serve-parse-files-via-https/
-// 04-29-16 (0.25) - Added a 'back' Nav Bar button to Sign Up page
+// 04-29-16 (0.5) - Added a 'back' Nav Bar button to Sign Up page
 // 04-29-16 (0.5) - Revised page titles in all langauges using MainStoryBoard.strings
 // 04-29-16 (1.5) - Revised appearance of all buttons to flat appearance with grey transparent background
 // 04-29-16 (0.25) - Determined Gravar URL needs TLS. Fixed with HTTPS in GravatarURLBulder.m
@@ -1208,6 +1209,8 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 //********************************************************************************************************************
 
 // DONE (Version 1.1.1):
+//
+// - TESTING: When I deleted single location share, app popped back to MainVC with badge removed as expected.
 //
 // 12-20-14 - HOUSEKEEPING: Removed unneeded NSLog messages
 // 12-20-14 - BUG iOS 8.0:  Error message when trying to upload: 'No Location' 'We were not able to determine your location.  Please check that your GPS is on and working.'
