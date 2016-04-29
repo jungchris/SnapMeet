@@ -78,7 +78,15 @@
         // set the map view
         if (senderMapFile != NULL) {
             
-            NSURL *mapFileUrl = [[NSURL alloc] initWithString:senderMapFile.url];
+            // force https
+            NSString *parseURLString    = senderMapFile.url;
+            NSString *stringToReplace   = @"http://";
+            NSString *amazonAWSString   = @"https://s3.amazonaws.com/";
+            NSString *secureURL         = [parseURLString stringByReplacingOccurrencesOfString:stringToReplace withString:amazonAWSString];
+            
+            // NSLog(@"new string: %@", secureURL);
+            
+            NSURL *mapFileUrl = [[NSURL alloc] initWithString:secureURL];
             NSData *mapData = [NSData dataWithContentsOfURL:mapFileUrl];
             // set the primary and fallback image used to display the map
             self.mapView.layer.masksToBounds = YES;            // noted no difference
@@ -96,7 +104,13 @@
         // set the snapshot view
         if (senderSnapFile != NULL) {
             
-            NSURL *snapFileUrl = [[NSURL alloc] initWithString:senderSnapFile.url];
+            // force https
+            NSString *parseURLString    = senderSnapFile.url;
+            NSString *stringToReplace   = @"http://";
+            NSString *amazonAWSString   = @"https://s3.amazonaws.com/";
+            NSString *secureURL         = [parseURLString stringByReplacingOccurrencesOfString:stringToReplace withString:amazonAWSString];
+            
+            NSURL *snapFileUrl = [[NSURL alloc] initWithString:secureURL];
             NSData *snapData = [NSData dataWithContentsOfURL:snapFileUrl];
             // set the primary and fallback image used to display the snapshot
             self.snapView.layer.masksToBounds = YES;            // noted no difference

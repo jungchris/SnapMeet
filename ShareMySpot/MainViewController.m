@@ -1198,7 +1198,7 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 //
 // DONE (Version 1.1.2):
 //
-// 04-29-16 () - Snapshot is not being sent. Image received is skewed. Images are Ok in Parse.
+// 04-29-16 (10:30-) - Snapshot is not being sent. Image received is skewed. Images are Ok in Parse. Found Parse uses HTTP in it's PFFile object. Used a simple trick to override to use AWS with https: http://hackingtheimpossible.com/quick-tip-serve-parse-files-via-https/
 // 04-29-16 (0.25) - Added a 'back' Nav Bar button to Sign Up page
 // 04-29-16 (0.5) - Revised page titles in all langauges using MainStoryBoard.strings
 // 04-29-16 (1.5) - Revised appearance of all buttons to flat appearance with grey transparent background
