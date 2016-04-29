@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Jyd-fC-Gtp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Jyd-fC-Gtp">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Snap Meet-->
@@ -79,10 +81,18 @@
                             </label>
                             <button opaque="NO" alpha="0.84999999999999987" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDW-Xw-tUb">
                                 <rect key="frame" x="223" y="209" width="80" height="40"/>
-                                <state key="normal" title="Log In" backgroundImage="smallbutton.png">
-                                    <color key="titleColor" red="0.3405541849" green="0.46002683080000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginButton:" destination="XT5-aU-LC0" eventType="touchUpInside" id="kmM-Za-33u"/>
                                 </connections>
@@ -113,14 +123,22 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="or login without Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="61w-cl-f97">
                                 <rect key="frame" x="20" y="161" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.84999999999999987" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOf-2r-739">
                                 <rect key="frame" x="120" y="383" width="80" height="40"/>
-                                <state key="normal" title="Sign Up" backgroundImage="smallbutton.png">
-                                    <color key="titleColor" red="0.3405541849" green="0.46002683080000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Sign Up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signupButton:" destination="XT5-aU-LC0" eventType="touchUpInside" id="QGj-Lv-deF"/>
                                 </connections>
@@ -133,11 +151,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Snap Meet - Log In" id="p62-d1-b9O"/>
+                    <navigationItem key="navigationItem" title="Login" id="p62-d1-b9O"/>
                     <connections>
                         <outlet property="activityIndicator" destination="1Vs-6D-epw" id="aSx-oC-oHW"/>
                         <outlet property="emailField" destination="mTb-n0-e2j" id="uYG-a7-S2W"/>
+                        <outlet property="loginButtonOutlet" destination="ZDW-Xw-tUb" id="aPy-vO-xK2"/>
                         <outlet property="passwordField" destination="ni1-e0-Skp" id="oZr-fX-PEL"/>
+                        <outlet property="signupButtonOutlet" destination="VOf-2r-739" id="UY3-79-aGZ"/>
                         <segue destination="SZI-GL-nT7" kind="push" identifier="showSignup" id="7Sw-cH-uqG"/>
                     </connections>
                 </viewController>
@@ -145,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="1276" y="84"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="kge-pa-vA9">
             <objects>
-                <viewController id="9Uj-F2-orJ" customClass="SettingsViewController" sceneMemberID="viewController">
+                <viewController title="Settings" id="9Uj-F2-orJ" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uiS-2O-9Ta"/>
                         <viewControllerLayoutGuide type="bottom" id="tW3-JO-pFe"/>
@@ -223,7 +243,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0iE-XS-hVv"/>
+                    <navigationItem key="navigationItem" title="Settings" id="0iE-XS-hVv"/>
                     <connections>
                         <outlet property="statusABookLabel" destination="iOc-vo-OCi" id="zhW-eT-EhF"/>
                         <outlet property="statusCameraLabel" destination="gzQ-9n-VBO" id="4aa-s7-IMv"/>
@@ -233,9 +253,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBh-3V-yck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="796" y="934"/>
+            <point key="canvasLocation" x="796" y="835"/>
         </scene>
-        <!--Snap Meet - Places-->
+        <!--Places-->
         <scene sceneID="4xd-mf-yHs">
             <objects>
                 <tableViewController id="NhP-WH-U41" customClass="LocationsViewController" sceneMemberID="viewController">
@@ -248,18 +268,18 @@
                                 <rect key="frame" x="0.0" y="86" width="320" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pal-HU-zAI" id="XAW-Bo-RZn">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="71.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0S4-di-npj">
-                                            <rect key="frame" x="15" y="17" width="34" height="22"/>
+                                            <rect key="frame" x="15" y="18" width="35.5" height="21.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C0V-GL-nSa">
-                                            <rect key="frame" x="15" y="39" width="43" height="15"/>
+                                            <rect key="frame" x="15" y="39.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -275,16 +295,16 @@
                             <outlet property="delegate" destination="NhP-WH-U41" id="BAp-Tw-hHE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Snap Meet - Places" id="mDk-eX-wEq"/>
+                    <navigationItem key="navigationItem" title="Places" id="mDk-eX-wEq"/>
                     <connections>
                         <segue destination="80A-O8-vDZ" kind="push" identifier="showDetail" id="FAX-bU-eN5"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJe-AG-Tn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1276" y="779"/>
+            <point key="canvasLocation" x="1276" y="835"/>
         </scene>
-        <!--Snap Meet - Snapshot-->
+        <!--Snapshot-->
         <scene sceneID="pw9-AI-OJy">
             <objects>
                 <viewController id="80A-O8-vDZ" customClass="DetailViewController" sceneMemberID="viewController">
@@ -325,18 +345,40 @@
                             </imageView>
                             <button opaque="NO" alpha="0.84999999999999987" contentMode="scaleToFill" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOA-hS-VDQ">
                                 <rect key="frame" x="220" y="73" width="80" height="30"/>
-                                <state key="normal" title="Directions" backgroundImage="smallbutton.png">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="B7l-MI-wsl"/>
+                                </constraints>
+                                <state key="normal" title="Directions">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="navitageButton:" destination="80A-O8-vDZ" eventType="touchUpInside" id="1Qj-YM-L6O"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.84999999999999987" contentMode="scaleToFill" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSM-DO-vKk">
                                 <rect key="frame" x="13" y="73" width="80" height="30"/>
-                                <state key="normal" title="Delete" backgroundImage="smallbutton.png">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Vhr-TB-47Z"/>
+                                </constraints>
+                                <state key="normal" title="Delete">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="deleteButton:" destination="80A-O8-vDZ" eventType="touchUpInside" id="yuQ-Q8-rRt"/>
                                 </connections>
@@ -364,7 +406,7 @@
                             <constraint firstAttribute="trailing" secondItem="pHR-J6-ld6" secondAttribute="trailing" constant="20" id="zds-b0-SPB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Snap Meet - Snapshot" id="flV-7U-mmp">
+                    <navigationItem key="navigationItem" title="Snapshot" id="flV-7U-mmp">
                         <barButtonItem key="rightBarButtonItem" title="Navigate" id="c89-NT-QAy">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9fs-0y-pW7">
                                 <rect key="frame" x="233" y="5" width="71" height="33"/>
@@ -378,20 +420,22 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="deleteButtonOutlet" destination="YSM-DO-vKk" id="BKh-wU-HIE"/>
                         <outlet property="mapView" destination="Njp-Z7-znH" id="M5k-ra-18k"/>
                         <outlet property="nameLabel" destination="pHR-J6-ld6" id="oPj-d6-eWh"/>
+                        <outlet property="navigateButtonOutlet" destination="hOA-hS-VDQ" id="dCC-bZ-QW0"/>
                         <outlet property="snapView" destination="swb-3y-vcz" id="RRQ-9F-ctu"/>
                         <outlet property="timeLabel" destination="5Hq-NF-Yv6" id="aa0-Xn-IPc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9M-hs-q5O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1740" y="779"/>
+            <point key="canvasLocation" x="1740" y="835"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Map View-->
         <scene sceneID="60w-zq-Pk7">
             <objects>
-                <viewController id="u0P-Oz-52B" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController title="Map View" id="u0P-Oz-52B" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="miG-p1-CdW"/>
                         <viewControllerLayoutGuide type="bottom" id="6DR-I2-yhh"/>
@@ -422,23 +466,17 @@
                                 <rect key="frame" x="0.0" y="64" width="66" height="66"/>
                             </imageView>
                             <button opaque="NO" alpha="0.89999999999999991" contentMode="scaleToFill" placeholderIntrinsicWidth="66" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0Z-nB-fgf">
-                                <rect key="frame" x="254" y="324" width="66" height="40"/>
+                                <rect key="frame" x="36" y="456" width="66" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="t8M-lu-0Aq"/>
+                                    <constraint firstAttribute="height" constant="40" id="vX9-sz-B6G"/>
+                                </constraints>
                                 <size key="titleShadowOffset" width="2" height="2"/>
-                                <state key="normal" image="camera.png" backgroundImage="midbutton.png">
+                                <state key="normal" image="camera.png">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="cameraButton:" destination="u0P-Oz-52B" eventType="touchUpInside" id="7rj-C4-kNz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.89999999999999991" contentMode="scaleToFill" placeholderIntrinsicWidth="66" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCx-gO-Yqk">
-                                <rect key="frame" x="254" y="264" width="66" height="40"/>
-                                <state key="normal" title="Share" backgroundImage="midbutton.png">
-                                    <color key="titleColor" red="0.34055418493631118" green="0.46002683084840257" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendLocationButton:" destination="u0P-Oz-52B" eventType="touchUpInside" id="plh-TB-OBB"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share Location With:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMC-Xc-YDr">
@@ -447,13 +485,35 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" alpha="0.89999999999999991" contentMode="scaleToFill" placeholderIntrinsicWidth="66" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCx-gO-Yqk">
+                                <rect key="frame" x="212" y="456" width="72" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="Dx4-MC-hUB"/>
+                                    <constraint firstAttribute="height" constant="40" id="Zvp-dd-HrB"/>
+                                </constraints>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendLocationButton:" destination="u0P-Oz-52B" eventType="touchUpInside" id="plh-TB-OBB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="bCx-gO-Yqk" secondAttribute="trailing" id="gui-SK-G60"/>
-                            <constraint firstItem="bCx-gO-Yqk" firstAttribute="trailing" secondItem="l0Z-nB-fgf" secondAttribute="trailing" id="htR-ej-8HF"/>
-                            <constraint firstItem="l0Z-nB-fgf" firstAttribute="top" secondItem="bCx-gO-Yqk" secondAttribute="bottom" constant="20" id="j60-ad-jXS"/>
-                            <constraint firstItem="bCx-gO-Yqk" firstAttribute="top" secondItem="J3W-VQ-JFS" secondAttribute="top" constant="264" id="utD-VQ-OX9"/>
+                            <constraint firstItem="6DR-I2-yhh" firstAttribute="top" secondItem="bCx-gO-Yqk" secondAttribute="bottom" constant="72" id="YiV-vc-hUH"/>
+                            <constraint firstItem="6DR-I2-yhh" firstAttribute="top" secondItem="l0Z-nB-fgf" secondAttribute="bottom" constant="72" id="bzO-5Y-bh9"/>
+                            <constraint firstItem="l0Z-nB-fgf" firstAttribute="leading" secondItem="J3W-VQ-JFS" secondAttribute="leadingMargin" constant="20" id="cNl-7o-pKA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bCx-gO-Yqk" secondAttribute="trailing" constant="20" id="rxi-dQ-kqt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OUy-T2-uNA">
@@ -471,9 +531,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="avatarView" destination="qIy-8J-TC4" id="eX2-mE-ujj"/>
+                        <outlet property="cameraButtonOutlet" destination="l0Z-nB-fgf" id="1hv-un-VQa"/>
                         <outlet property="emailLabel" destination="eBc-ho-95L" id="XYc-5n-eJz"/>
                         <outlet property="mapView" destination="n2v-zF-rxy" id="NRV-tj-feo"/>
                         <outlet property="recipientLabel" destination="4vF-Du-qIt" id="ft9-bW-ni1"/>
+                        <outlet property="sendButtonOutlet" destination="bCx-gO-Yqk" id="gPO-XD-mSf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFA-k6-fhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -521,9 +583,17 @@
                             <button opaque="NO" alpha="0.84999999999999987" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CV9-bS-n6M">
                                 <rect key="frame" x="119" y="223" width="80" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Sign Up" backgroundImage="smallbutton.png">
-                                    <color key="titleColor" red="0.3405541849" green="0.46002683080000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signupButton:" destination="SZI-GL-nT7" eventType="touchUpInside" id="xXD-z6-hRO"/>
                                 </connections>
@@ -560,12 +630,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Snap Meet - Sign Up" id="v0U-Pf-8K6"/>
+                    <navigationItem key="navigationItem" title="Sign Up" id="v0U-Pf-8K6"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Ffa-DA-gx0" id="npe-wF-7ju"/>
                         <outlet property="emailField" destination="a3F-ru-OXh" id="w6j-qW-JvB"/>
                         <outlet property="nameField" destination="PUf-Fi-JJT" id="Xo6-M8-wTK"/>
                         <outlet property="passwordField" destination="lk7-Br-nKf" id="4Tu-35-YOA"/>
+                        <outlet property="signupButtonOutlet" destination="CV9-bS-n6M" id="ODq-6R-443"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCu-dV-vAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -580,12 +651,5 @@
         <image name="bgturqlite.png" width="320" height="480"/>
         <image name="camera.png" width="56" height="40"/>
         <image name="coffline.png" width="320" height="480"/>
-        <image name="midbutton.png" width="84" height="42"/>
-        <image name="smallbutton.png" width="80" height="40"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

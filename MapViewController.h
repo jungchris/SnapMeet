@@ -52,6 +52,11 @@
 @property (strong, nonatomic) UIImagePickerController *photoPicker;
 @property (strong, nonatomic) UIImage *snapshot;
 
+// set button properties
+@property (weak, nonatomic) IBOutlet UIButton *sendButtonOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *cameraButtonOutlet;
+
+
 //@property (weak, nonatomic) IBOutlet UIImageView *mapIcon; // used to display map icon for testing purposes
 - (IBAction)cameraButton:(id)sender;
 

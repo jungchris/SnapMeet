@@ -127,6 +127,13 @@
         }
     }
     
+    // set button borders and backgrounds
+    self.navigateButtonOutlet.layer.borderColor = [[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.5] CGColor];
+    self.navigateButtonOutlet.backgroundColor   = [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.1];
+
+    self.deleteButtonOutlet.layer.borderColor = [[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.5] CGColor];
+    self.deleteButtonOutlet.backgroundColor   = [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.1];
+    
     // start iAd on this view
     [self addADBannerViewToBottom];
     

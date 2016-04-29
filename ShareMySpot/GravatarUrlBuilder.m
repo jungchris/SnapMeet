@@ -28,7 +28,7 @@
     
     int squareSideLength = 32;
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.gravatar.com/avatar/%@.jpg?d=404&s=%d", hexValue, squareSideLength]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.gravatar.com/avatar/%@.jpg?d=404&s=%d", hexValue, squareSideLength]];
     
     return url;
 }

@@ -24,12 +24,24 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    // add a back button
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"< Back" style:UIBarButtonItemStylePlain target:self action:@selector(selectorBackTouch)];
+    self.navigationItem.leftBarButtonItem = leftButton;
+    
     // activity indicator
     [_activityIndicator hidesWhenStopped];
     
+    // set button border color
+    self.signupButtonOutlet.layer.borderColor = [[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.5] CGColor];
+    self.signupButtonOutlet.backgroundColor   = [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.1];
 }
 
 #pragma mark - Button methods
+
+- (void)selectorBackTouch {
+    
+    [self.navigationController popViewControllerAnimated:YES];    
+}
 
 - (IBAction)signupButton:(id)sender {
     

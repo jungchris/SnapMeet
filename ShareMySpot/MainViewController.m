@@ -256,6 +256,8 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     
 }
 
+#pragma mark - LoginVC delegate
+
 // delegate handler for email sent by SignupVC to LoginVC intermediary.
 // Running this is important on new user sign up.  We need to look for any shared locations and present them.
 - (void)sendItemToMainVC:(LoginViewController *)lvc signupItem:(NSString *)email withName:(NSString *)name {
@@ -706,8 +708,13 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     
     self.shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.shareButton addTarget:self action:@selector(shareLocation:) forControlEvents:UIControlEventTouchUpInside];
-    [self.shareButton setBackgroundImage:[UIImage imageNamed:@"mainbuttonb-ns.png"] forState:UIControlStateNormal];
-    [self.shareButton setBackgroundImage:[UIImage imageNamed:@"mainbuttonb.png"] forState:UIControlStateHighlighted];
+//    [self.shareButton setBackgroundImage:[UIImage imageNamed:@"mainbuttonb-ns.png"] forState:UIControlStateNormal];
+//    [self.shareButton setBackgroundImage:[UIImage imageNamed:@"mainbuttonb.png"] forState:UIControlStateHighlighted];
+    
+    [self.shareButton.layer setBorderWidth:3.0];
+    [self.shareButton.layer setCornerRadius:6.0];
+    self.shareButton.layer.borderColor = [[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.5] CGColor];
+    self.shareButton.backgroundColor   = [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.1];
     
     [self.shareButton setTitleColor:[UIColor colorWithRed:0.25f green:0.45f blue:0.90f alpha:1] forState:UIControlStateNormal];
     [self.shareButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
@@ -733,9 +740,12 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     
     self.friendsButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.friendsButton addTarget:self action:@selector(findFriends:) forControlEvents:UIControlEventTouchUpInside];
-    [self.friendsButton setBackgroundImage:[UIImage imageNamed:@"mainbuttonb-ns.png"] forState:UIControlStateNormal];
-    [self.friendsButton setBackgroundImage:[UIImage imageNamed:@"mainbuttonb.png"] forState:UIControlStateHighlighted];
     
+    [self.friendsButton.layer setBorderWidth:3.0];
+    [self.friendsButton.layer setCornerRadius:6.0];
+    self.friendsButton.layer.borderColor = [[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.5] CGColor];
+    self.friendsButton.backgroundColor   = [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.1];
+
     [self.friendsButton setTitleColor:[UIColor colorWithRed:0.25f green:0.25f blue:0.50f alpha:1.0] forState:UIControlStateNormal];
     [self.friendsButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     
@@ -748,7 +758,7 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     w = 242.0;
     h = 46.0;
     x = self.view.frame.size.width - w;                     // was (self.view.frame.size.width - w) / 2.0f;
-    y = (self.view.frame.size.height / 2.93f) + 92.0f;      // was 2.93f + 116.0f.
+    y = (self.view.frame.size.height / 2.93f) + 104.0f;      // was 2.93f) + 92.0f.
     
     self.friendsButton.frame = CGRectMake(x, y, w, h);
     
@@ -760,8 +770,12 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     
     self.addressBookButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.addressBookButton addTarget:self action:@selector(loadAddressBook:) forControlEvents:UIControlEventTouchUpInside];
-    [self.addressBookButton setBackgroundImage:[UIImage imageNamed:@"mainbuttonb-ns.png"] forState:UIControlStateNormal];
-    [self.addressBookButton setBackgroundImage:[UIImage imageNamed:@"mainbuttonb.png"] forState:UIControlStateHighlighted];
+
+    [self.addressBookButton.layer setBorderWidth:3.0];
+    [self.addressBookButton.layer setCornerRadius:6.0];
+    self.addressBookButton.layer.borderColor = [[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.5] CGColor];
+    self.addressBookButton.backgroundColor   = [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.1];
+
     
     [self.addressBookButton setTitleColor:[UIColor colorWithRed:0.25f green:0.45f blue:0.90f alpha:1] forState:UIControlStateNormal];
     [self.addressBookButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
@@ -775,7 +789,7 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     w = 242.0;
     h = 46.0;
     x = self.view.frame.size.width - w;
-    y = self.view.frame.size.height / 2.93f + 46.0f;        // was 2.93f + 58.0f
+    y = self.view.frame.size.height / 2.93f + 52.0f;        // was 2.93f + 46.0f
     
     self.addressBookButton.frame = CGRectMake(x, y, w, h);
     
@@ -786,8 +800,12 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     
     self.settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.settingsButton addTarget:self action:@selector(loadSettings:) forControlEvents:UIControlEventTouchUpInside];
-    [self.settingsButton setBackgroundImage:[UIImage imageNamed:@"mainbuttonb-ns.png"] forState:UIControlStateNormal];
-    [self.settingsButton setBackgroundImage:[UIImage imageNamed:@"mainbuttonb.png"] forState:UIControlStateHighlighted];
+    
+    [self.settingsButton.layer setBorderWidth:3.0];
+    [self.settingsButton.layer setCornerRadius:6.0];
+    self.settingsButton.layer.borderColor = [[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.5] CGColor];
+    self.settingsButton.backgroundColor   = [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.1];
+
     
     [self.settingsButton setTitleColor:[UIColor colorWithRed:0.25f green:0.45f blue:0.90f alpha:1] forState:UIControlStateNormal];
     [self.settingsButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
@@ -815,7 +833,7 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     
     // Get the location of the 'Find My Friends' UIButton
     CGFloat x = (self.view.frame.size.width) - 25.0f;                   // was / 2.0f + 110.0f;
-    CGFloat y = (self.view.frame.size.height / 2.93f) + 92.0f;          // was + 106.0f
+    CGFloat y = (self.view.frame.size.height / 2.93f) + 98.0f;          // was + 2.93f) + 92.0f
     
     CGSize badgeSize = self.badge.frame.size;
     self.badge.frame = CGRectMake(x, y, badgeSize.width, badgeSize.height);
@@ -1176,6 +1194,17 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 */
 // Auto increment xCode build numbers: http://stackoverflow.com/questions/6286937/how-to-auto-increment-bundle-version-in-xcode-4/ and also http://stackoverflow.com/questions/6851660/version-vs-build-in-xcode-4
 
+//
+//
+// DONE (Version 1.1.2):
+//
+// 04-29-16 () - Snapshot is not being sent. Image received is skewed. Images are Ok in Parse.
+// 04-29-16 (0.25) - Added a 'back' Nav Bar button to Sign Up page
+// 04-29-16 (0.5) - Revised page titles in all langauges using MainStoryBoard.strings
+// 04-29-16 (1.5) - Revised appearance of all buttons to flat appearance with grey transparent background
+// 04-29-16 (0.25) - Determined Gravar URL needs TLS. Fixed with HTTPS in GravatarURLBulder.m
+// 04-29-16 (0.5) - Code review Started.
+//
 //********************************************************************************************************************
 
 // DONE (Version 1.1.1):

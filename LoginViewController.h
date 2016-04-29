@@ -34,6 +34,10 @@
 // facebook activity indicator
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
+@property (weak, nonatomic) IBOutlet UIButton *loginButtonOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *signupButtonOutlet;
+
+
 - (IBAction)loginButtonFB:(id)sender;
 - (IBAction)loginButton:(id)sender;
 - (IBAction)signupButton:(id)sender;

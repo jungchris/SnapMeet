@@ -56,8 +56,8 @@
 /* Class = "IBUILabel"; text = "email"; ObjectID = "eBc-ho-95L"; */
 "eBc-ho-95L.text" = "địa chỉ email";
 
-/* Class = "IBUINavigationItem"; title = "SnapMeet - Snapshot"; ObjectID = "flV-7U-mmp"; */
-"flV-7U-mmp.title" = "Snap Meet - ảnh chụp";
+/* Class = "IBUINavigationItem"; title = "Snapshot"; ObjectID = "flV-7U-mmp"; */
+"flV-7U-mmp.title" = "ảnh chụp";
 
 /* Class = "IBUIButton"; normalTitle = "Privacy Notice"; ObjectID = "ggA-9l-hHC"; */
 "ggA-9l-hHC.normalTitle" = "thông báo bảo mật";
@@ -77,14 +77,14 @@
 /* Class = "IBUITextField"; text = "Password"; ObjectID = "lk7-Br-nKf"; */
 "lk7-Br-nKf.text" = "mật khẩu";
 
-/* Class = "IBUINavigationItem"; title = "SnapMeet - Places"; ObjectID = "mDk-eX-wEq"; */
-"mDk-eX-wEq.title" = "SnapMeet - nơi";
+/* Class = "IBUINavigationItem"; title = "Places"; ObjectID = "mDk-eX-wEq"; */
+"mDk-eX-wEq.title" = "nơi";
 
 /* Class = "IBUITextField"; text = "Password"; ObjectID = "ni1-e0-Skp"; */
 "ni1-e0-Skp.text" = "mật khẩu";
 
-/* Class = "IBUINavigationItem"; title = "SnapMeet - Log In"; ObjectID = "p62-d1-b9O"; */
-"p62-d1-b9O.title" = "Snap Meet - đăng nhập";
+/* Class = "IBUINavigationItem"; title = "Log In"; ObjectID = "p62-d1-b9O"; */
+"p62-d1-b9O.title" = "đăng nhập";
 
 /* Class = "IBUILabel"; text = "Label"; ObjectID = "pHR-J6-ld6"; */
 "pHR-J6-ld6.text" = "Nhãn";
@@ -92,8 +92,8 @@
 /* Class = "IBUILabel"; text = "One-time location share with:"; ObjectID = "rMC-Xc-YDr"; */
 "rMC-Xc-YDr.text" = "Chia sẻ vị trí:";
 
-/* Class = "IBUINavigationItem"; title = "placeMe - Sign Up"; ObjectID = "v0U-Pf-8K6"; */
-"v0U-Pf-8K6.title" = "Snap Meet - ghi tên";
+/* Class = "IBUINavigationItem"; title = "Sign Up"; ObjectID = "v0U-Pf-8K6"; */
+"v0U-Pf-8K6.title" = "ghi tên";
 
 /* Class = "IBUILabel"; text = "Don't have an account?"; ObjectID = "vNG-sD-lLR"; */
 "vNG-sD-lLR.text" = "Không có tài khoản?";

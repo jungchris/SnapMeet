@@ -86,6 +86,11 @@
     // revised location service activation
     [self determineLocation:YES];
     
+    // set button border and background color
+    self.sendButtonOutlet.layer.borderColor = [[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.5] CGColor];
+    self.sendButtonOutlet.backgroundColor   = [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.1];
+    
+  
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -170,7 +175,11 @@
 //        NSLog(@"MapVC: Delegate: didUpdateLocationS - stopUpdatingLocation");
     }
     
-    CLLocationCoordinate2D myCoordinate = newLocation.coordinate;                                   // newLocation.coordinate.longitude and latitude properties
+    // Winning's GPS coordinates for testing
+//    CLLocationCoordinate2D myCoordinate = CLLocationCoordinate2DMake(35.080786, -106.620968);
+    CLLocationCoordinate2D myCoordinate = newLocation.coordinate;
+    
+    // newLocation.coordinate.longitude and latitude properties
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, 250, 250);     // 500, 500
     MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
     [self.mapView setRegion:adjustedRegion animated:YES];

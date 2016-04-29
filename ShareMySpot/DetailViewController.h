@@ -43,6 +43,10 @@
 // this property is set from LocationsVC in prepareForSegue
 @property (assign, nonatomic) NSInteger locationRow;
 
+@property (weak, nonatomic) IBOutlet UIButton *navigateButtonOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButtonOutlet;
+
+
 // button properties
 // user requests directions
 - (IBAction)navitageButton:(id)sender;

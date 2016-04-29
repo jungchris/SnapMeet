@@ -265,6 +265,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D2F94C71CD3A069005BA185 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2D2F94CC1CD3A1B4005BA185 /* Settings */,
+				2D2F94CB1CD3A10D005BA185 /* Retrieve */,
+				2D2F94CA1CD3A0C5005BA185 /* Send */,
+				2D2F94C91CD3A0B2005BA185 /* Login */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2D2F94C81CD3A097005BA185 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE3B5C3318A9A2E700C51AA4 /* GravatarUrlBuilder.h */,
+				CE3B5C3418A9A2E700C51AA4 /* GravatarUrlBuilder.m */,
+				CE6CAD0618BC3BEC00BA3FA5 /* BannerViewController.h */,
+				CE6CAD0718BC3BEC00BA3FA5 /* BannerViewController.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		2D2F94C91CD3A0B2005BA185 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CEFF24341885D9F10058D5D2 /* LoginViewController.h */,
+				CEFF24351885D9F10058D5D2 /* LoginViewController.m */,
+				CEFF24371885DA080058D5D2 /* SignupViewController.h */,
+				CEFF24381885DA080058D5D2 /* SignupViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		2D2F94CA1CD3A0C5005BA185 /* Send */ = {
+			isa = PBXGroup;
+			children = (
+				CEFF244318861C2B0058D5D2 /* MapViewController.h */,
+				CEFF244418861C2C0058D5D2 /* MapViewController.m */,
+			);
+			name = Send;
+			sourceTree = "<group>";
+		};
+		2D2F94CB1CD3A10D005BA185 /* Retrieve */ = {
+			isa = PBXGroup;
+			children = (
+				CEFDAFFF188982620042CB26 /* LocationsViewController.h */,
+				CEFDB000188982620042CB26 /* LocationsViewController.m */,
+				CE8A5BAB18B59A190017241B /* LocationTableCell.h */,
+				CE8A5BAC18B59A190017241B /* LocationTableCell.m */,
+				CE94438118EDECCD005EF3DB /* LocationTableCell.xib */,
+				CE5005D918D0F11F0074173C /* DetailViewController.h */,
+				CE5005DA18D0F11F0074173C /* DetailViewController.m */,
+			);
+			name = Retrieve;
+			sourceTree = "<group>";
+		};
+		2D2F94CC1CD3A1B4005BA185 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CE92F6A5195B330C006D6E92 /* SettingsViewController.h */,
+				CE92F6A6195B330D006D6E92 /* SettingsViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		CE0DFC1E18EB783200338FF1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,31 +412,14 @@
 		CEFF23EE1884DDF90058D5D2 /* ShareMySpot */ = {
 			isa = PBXGroup;
 			children = (
+				2D2F94C81CD3A097005BA185 /* Models */,
+				2D2F94C71CD3A069005BA185 /* Views */,
 				CED3E23A18EB4A1F002536ED /* MainStoryboard.storyboard */,
 				CE6CAD0518BBF7A100BA3FA5 /* iPad */,
 				CEFF23F71884DDF90058D5D2 /* AppDelegate.h */,
 				CEFF23F81884DDF90058D5D2 /* AppDelegate.m */,
-				CE3B5C3318A9A2E700C51AA4 /* GravatarUrlBuilder.h */,
-				CE3B5C3418A9A2E700C51AA4 /* GravatarUrlBuilder.m */,
-				CEFDAFFF188982620042CB26 /* LocationsViewController.h */,
-				CEFDB000188982620042CB26 /* LocationsViewController.m */,
-				CE5005D918D0F11F0074173C /* DetailViewController.h */,
-				CE5005DA18D0F11F0074173C /* DetailViewController.m */,
-				CE8A5BAB18B59A190017241B /* LocationTableCell.h */,
-				CE8A5BAC18B59A190017241B /* LocationTableCell.m */,
-				CEFF24341885D9F10058D5D2 /* LoginViewController.h */,
-				CEFF24351885D9F10058D5D2 /* LoginViewController.m */,
 				CEFF241B1885B6F40058D5D2 /* MainViewController.h */,
 				CEFF241C1885B6F40058D5D2 /* MainViewController.m */,
-				CE6CAD0618BC3BEC00BA3FA5 /* BannerViewController.h */,
-				CE6CAD0718BC3BEC00BA3FA5 /* BannerViewController.m */,
-				CE94438118EDECCD005EF3DB /* LocationTableCell.xib */,
-				CEFF244318861C2B0058D5D2 /* MapViewController.h */,
-				CEFF244418861C2C0058D5D2 /* MapViewController.m */,
-				CEFF24371885DA080058D5D2 /* SignupViewController.h */,
-				CEFF24381885DA080058D5D2 /* SignupViewController.m */,
-				CE92F6A5195B330C006D6E92 /* SettingsViewController.h */,
-				CE92F6A6195B330D006D6E92 /* SettingsViewController.m */,
 				CEFF23FA1884DDF90058D5D2 /* Images.xcassets */,
 				CE3B5C1718A05B6E00C51AA4 /* JSCustomBadge */,
 				CEFF23EF1884DDF90058D5D2 /* Supporting Files */,
@@ -804,6 +852,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/chrisjungmann/Desktop/Developer/SnapMeet,
@@ -828,6 +877,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/chrisjungmann/Desktop/Developer/SnapMeet,

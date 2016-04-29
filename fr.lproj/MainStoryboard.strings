@@ -56,8 +56,8 @@
 /* Class = "IBUILabel"; text = "email"; ObjectID = "eBc-ho-95L"; */
 "eBc-ho-95L.text" = "e-mail";
 
-/* Class = "IBUINavigationItem"; title = "SnapMeet - Snapshot"; ObjectID = "flV-7U-mmp"; */
-"flV-7U-mmp.title" = "SnapMeet - Instantané";
+/* Class = "IBUINavigationItem"; title = "Snapshot"; ObjectID = "flV-7U-mmp"; */
+"flV-7U-mmp.title" = "Instantané";
 
 /* Class = "IBUIButton"; normalTitle = "Privacy Notice"; ObjectID = "ggA-9l-hHC"; */
 "ggA-9l-hHC.normalTitle" = "Confidentialité";
@@ -78,13 +78,13 @@
 "lk7-Br-nKf.text" = "Mot de passe";
 
 /* Class = "IBUINavigationItem"; title = "SnapMeet - Places"; ObjectID = "mDk-eX-wEq"; */
-"mDk-eX-wEq.title" = "SnapMeet - Places";
+"mDk-eX-wEq.title" = "Places";
 
 /* Class = "IBUITextField"; text = "Password"; ObjectID = "ni1-e0-Skp"; */
 "ni1-e0-Skp.text" = "Mot de passe";
 
 /* Class = "IBUINavigationItem"; title = "SnapMeet - Log In"; ObjectID = "p62-d1-b9O"; */
-"p62-d1-b9O.title" = "SnapMeet - Connexion";
+"p62-d1-b9O.title" = "Connexion";
 
 /* Class = "IBUILabel"; text = "Label"; ObjectID = "pHR-J6-ld6"; */
 "pHR-J6-ld6.text" = "Titre";
@@ -93,7 +93,7 @@
 "rMC-Xc-YDr.text" = "Partager l'endroit:";
 
 /* Class = "IBUINavigationItem"; title = "placeMe - Sign Up"; ObjectID = "v0U-Pf-8K6"; */
-"v0U-Pf-8K6.title" = "SnapMeet - s'inscrire";
+"v0U-Pf-8K6.title" = "S'inscrire";
 
 /* Class = "IBUILabel"; text = "Don't have an account?"; ObjectID = "vNG-sD-lLR"; */
 "vNG-sD-lLR.text" = "Vous n'avez pas de compte?";
