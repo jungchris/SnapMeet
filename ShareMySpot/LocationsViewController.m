@@ -116,6 +116,11 @@
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             // code
         
+            // force https
+//            NSString *stringToReplace   = @"http://";
+//            NSString *amazonAWSString   = @"https://";
+//            NSString *secureURL         = [senderURL stringByReplacingOccurrencesOfString:stringToReplace withString:amazonAWSString];
+            
             // 1. prepare the URL
             NSURL *url = [NSURL URLWithString:senderURL];
         

@@ -32,7 +32,7 @@
     [_activityIndicator hidesWhenStopped];
     
     // set button border color
-    self.signupButtonOutlet.layer.borderColor = [[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.5] CGColor];
+    self.signupButtonOutlet.layer.borderColor = [[UIColor colorWithRed:0.7 green:0.7 blue:0.7 alpha:0.5] CGColor];
     self.signupButtonOutlet.backgroundColor   = [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.1];
 }
 

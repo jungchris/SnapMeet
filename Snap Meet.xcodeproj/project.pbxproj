@@ -556,7 +556,7 @@
 		CEFF23DD1884DDF90058D5D2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Chris Jungmann";
 				TargetAttributes = {
 					CEFF23E41884DDF90058D5D2 = {
@@ -684,7 +684,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "~/Documents/autoVersion.sh\n";
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -788,6 +788,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: com.incaffeine.Snap-Meet";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -862,6 +863,7 @@
 				GCC_PREFIX_HEADER = "ShareMySpot/Snap Meet-Prefix.pch";
 				INFOPLIST_FILE = "ShareMySpot/Snap Meet-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.incaffeine.Snap-Meet";
 				PRODUCT_NAME = "Snap Meet";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -888,6 +890,7 @@
 				INFOPLIST_FILE = "ShareMySpot/Snap Meet-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.incaffeine.Snap-Meet";
 				PRODUCT_NAME = "Snap Meet";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -914,6 +917,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ShareMySpotTests/Snap MeetTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.incaffeine.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Snap MeetTests";
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -935,6 +939,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShareMySpot/Snap Meet-Prefix.pch";
 				INFOPLIST_FILE = "ShareMySpotTests/Snap MeetTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.incaffeine.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Snap MeetTests";
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
