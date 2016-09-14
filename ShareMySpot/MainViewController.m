@@ -21,6 +21,10 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 
 @implementation MainViewController
 
+// Used to handle different UIAlertView button configurations
+#define kAlertViewRegular 1
+#define kAlertViewConflict 2
+
 #pragma mark - View delegates
 
 - (void)viewDidLoad
@@ -649,9 +653,30 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
         
         // ios 7.1 or greater
         // Original code used to invoke address book picker.  Use this when iOS 7.0.3 bug on iPhone 4/4S is fixed.
-        ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
-        [picker setPeoplePickerDelegate:self];
-        [self presentViewController:picker animated:YES completion:nil];
+        
+        // on iOS 9.0+ we need permission first
+        ABAddressBookRef addressBook =  ABAddressBookCreateWithOptions(NULL, NULL);
+        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+            // permission check completion block
+            // NSLog(@"Access to contacts %@ by user", granted ? @"granted" : @"denied");
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                // get back on main
+                if (granted) {
+                    // access people picker
+                    ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
+                    [picker setPeoplePickerDelegate:self];
+                    [self presentViewController:picker animated:YES completion:nil];
+                    
+                    // make sure address book button is visible
+                    self.addressBookButton.alpha = 0.85;
+                    
+                } else {
+                    // gray out address book button
+                    self.addressBookButton.alpha = 0.25;
+                    [self showAlertWithTitle:@"No Permission" message:@"The Snap Meet App does not have permission to access your contacts.\n\nPlease enable this in Settings > Privacy > Contacts." andConfirmation:@"Ok"];
+                }
+            });
+        });
     }
     
     // TODO: create array of friends to share location with
@@ -1141,6 +1166,35 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     }
 }
 
+// alert views
+- (void)showAlertWithTitle:(NSString*)title message:(NSString*)message andConfirmation:(NSString*)confirmation {
+    // UIAlertView being replaced by UIAlertController - check if class is supported
+    if ([UIAlertController class]) {
+        // iOS 8
+        UIAlertController *alertBox = [UIAlertController alertControllerWithTitle:NSLocalizedStringWithDefaultValue(@"ALERT_TITLE", nil, [NSBundle mainBundle], title, nil)
+                                                                          message:NSLocalizedStringWithDefaultValue(@"ALERT_MESSAGE", nil, [NSBundle mainBundle], message, nil)
+                                                                   preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedStringWithDefaultValue(@"ALERT_CONFIRM", nil, [NSBundle mainBundle], confirmation, nil)
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction *action) {
+                                                              }];
+        
+        [alertBox addAction:defaultAction];
+        [self presentViewController:alertBox animated:YES completion:nil];
+        
+    } else {
+        // For iOS 7 (deprecated in iOS 8)
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedStringWithDefaultValue(@"ALERT_TITLE", nil, [NSBundle mainBundle], title, nil)
+                                                        message:NSLocalizedStringWithDefaultValue(@"ALERT_MESSAGE", nil, [NSBundle mainBundle], message, nil)
+                                                       delegate:nil
+                                              cancelButtonTitle:NSLocalizedStringWithDefaultValue(@"ALERT_CONFIRM", nil, [NSBundle mainBundle], confirmation, nil)
+                                              otherButtonTitles:nil];
+        alert.tag = kAlertViewRegular;
+        [alert show];
+    }
+}
+
 
 @end
 
@@ -1197,6 +1251,10 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 //
 // DONE (Version 1.1.2):
 //
+// 09-14-16 () - Need to make main screen background lighter
+// 09-14-16 (0.1) - Also updated the check routing in SettingsViewController
+// 09-14-16 (12:15-13:15) - Fatal crash in app in iOS 9: "A contact and its snapshot should both be non-unified". Need to ask user for permission: https://forums.developer.apple.com/thread/11354
+// 04-29-16 (0.25) - Resolved expired Push Distribution Certificate and resubmitted.
 // 04-29-16 (0.25) - Uploaded 1.1.2 build #29 - 4.5 hours
 // 04-29-16 (0.25) - Analyzed using Xcode and cleaned warnings. Set to Xcode recommended settings.
 // 04-29-16 (0.75) - Snapshot is not being sent. Image received is skewed. Images are Ok in Parse. Found Parse uses HTTP in it's PFFile object. Used a simple trick to override to use AWS with https: http://hackingtheimpossible.com/quick-tip-serve-parse-files-via-https/

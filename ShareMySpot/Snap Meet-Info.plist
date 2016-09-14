@@ -34,11 +34,13 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>30</string>
+	<string>49</string>
 	<key>FacebookAppID</key>
 	<string>614430848627057</string>
 	<key>FacebookDisplayName</key>
 	<string>Quick Meet</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -55,6 +57,5 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-    <key>ITSAppUsesNonExemptEncryption</key><false/>
 </dict>
 </plist>

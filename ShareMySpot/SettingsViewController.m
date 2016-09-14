@@ -24,7 +24,26 @@
     
     // check address book access is allowed:
     if ([ABPeoplePickerNavigationController accessInstanceVariablesDirectly]) {
-        self.statusABookLabel.text = @"Allowed";
+        
+        // on iOS 9.0+ we need permission first
+        ABAddressBookRef addressBook =  ABAddressBookCreateWithOptions(NULL, NULL);
+        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+            // permission check completion block
+            NSLog(@"Access to contacts %@ by user", granted ? @"granted" : @"denied");
+            
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                // get back on main
+                if (granted) {
+                    // permitted
+                    self.statusABookLabel.text = @"Allowed";
+                } else {
+                    // not permitted
+                    self.statusABookLabel.text = @"Denied";
+                }
+            });
+        });
+        
+        
     } else {
         self.statusABookLabel.text = @"Disabled";
     }
