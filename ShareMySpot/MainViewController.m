@@ -176,6 +176,8 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 // This is called by appdelegate didReceiveRemoteNotification on push notification reciept
 - (void)remoteNotificationHandler {
     
+    NSLog(@"remoteNotificationHandler");
+    
     // first increment the appDelegate counter
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.locationsCount = appDelegate.locationsCount + 1;
@@ -191,9 +193,15 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
     // update locations for standard user
     // removed && self.crrentFBUserEmail == NULL
     if (self.currentUser.email != NULL) {
-        
         // this is a standard login user (not facebook)
         [self retrieveLocations:self.currentUser.email];
+    }
+    
+    // update UI
+    if (self.locationsArray) {
+        [self updateBadgeAndLabel:[self.locationsArray count]];
+    } else {
+        NSLog(@"CATCH: locationsArray nil in remoteNotificationHandler");
     }
     
 }
@@ -1251,7 +1259,9 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 //
 // DONE (Version 1.1.2):
 //
-// 09-14-16 () - Need to make main screen background lighter
+// 09-15-16 (19:30-) - Ensure notifications are handeled properly in-app
+// 09-15-16 (0.75) - TestFlight on device and in simulator
+// 09-14-16 (0.1) - Need to make main screen background lighter
 // 09-14-16 (0.1) - Also updated the check routing in SettingsViewController
 // 09-14-16 (12:15-13:15) - Fatal crash in app in iOS 9: "A contact and its snapshot should both be non-unified". Need to ask user for permission: https://forums.developer.apple.com/thread/11354
 // 04-29-16 (0.25) - Resolved expired Push Distribution Certificate and resubmitted.
