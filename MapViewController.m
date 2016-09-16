@@ -265,8 +265,7 @@
 - (BOOL) startCameraControllerFromViewController: (UIViewController*) controller
                                    usingDelegate: (id <UIImagePickerControllerDelegate,
                                                    UINavigationControllerDelegate>) delegate {
-    
-    
+    // check if supported first
     if (([UIImagePickerController isSourceTypeAvailable:
           UIImagePickerControllerSourceTypeCamera] == NO) || (delegate == nil) || (controller == nil))
         return NO;
@@ -274,25 +273,37 @@
     UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
     cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
     
-    // Displays a control that allows the user to choose picture or movie capture, if both are available:
-//    cameraUI.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
-    
-    // Hides the controls for moving & scaling pictures, or for trimming movies. To instead show the controls, use YES.
+    // Hides the controls for moving & scaling pictures, or for trimming movies.
     cameraUI.allowsEditing = NO;
-    
-    // Hide the video option
-//    cameraUI.showsCameraControls = NO;
     cameraUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
     cameraUI.delegate = delegate;
+
     [self presentViewController:cameraUI animated:YES completion:nil];
 
+// Code to try resolving warning "Snapshotting a view that has not been rendered results in an empty snapshot. Ensure your view has been rendered at least once before snapshotting or snapshot after screen updates."
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        // try
+//        UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
+//        cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
+//        
+//        // Hides the controls for moving & scaling pictures, or for trimming movies. To instead show the controls, use YES.
+//        cameraUI.allowsEditing = NO;
+//        
+//        // Hide the video option
+//        //    cameraUI.showsCameraControls = NO;
+//        cameraUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
+//        cameraUI.delegate = delegate;
+//        
+//        [self presentViewController:cameraUI animated:YES completion:nil];
+//    });
+    
     return YES;
 }
 
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-//    NSLog(@"MaViewController: imagePickerController");
+    NSLog(@"MaViewController: didFinishPickingMediaWithInfo");
     // check if photo or video (Uses <MobileCoreServices/UTCoreTypes.h>)
     NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {

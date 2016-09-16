@@ -31,6 +31,8 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 {
     [super viewDidLoad];
     
+    NSLog(@"MainViewController:viewDidLoad");
+    
     // locations counter
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.locationsCount = 0;
@@ -152,6 +154,8 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 // This is called by applicationWillEnterForeground (maybe I should use applicationDidBecomeActive instead?)
 - (void)enterForegroundHandler {
     
+    NSLog(@"enterForegroundHandler");
+
 //    self.currentUser = [PFUser currentUser];
     
     // update locations for standard user 3-14-14
@@ -1259,7 +1263,8 @@ Version 0.9 allows the iPhone user to share his location along with a snapshot o
 //
 // DONE (Version 1.1.2):
 //
-// 09-15-16 (19:30-) - Ensure notifications are handeled properly in-app
+// 09-16-16 (07:30-) - Ensure notifications are handeled properly in-app
+// 09-16-16 (0.25) - Received "Error message '_BSMachError: (os/kern) invalid capability". Unresolved: http://stackoverflow.com/questions/32899586/error-message-bsmacherror-os-kern-invalid-capability-20
 // 09-15-16 (0.75) - TestFlight on device and in simulator
 // 09-14-16 (0.1) - Need to make main screen background lighter
 // 09-14-16 (0.1) - Also updated the check routing in SettingsViewController

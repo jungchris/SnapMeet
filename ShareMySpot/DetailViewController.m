@@ -122,7 +122,7 @@
                 
                 // check image orientation
                 if (snapImage.imageOrientation == UIImageOrientationUp) {
-                    NSLog(@" ---> portrait");
+                    // NSLog(@" ---> portrait");
                     
                     self.snapView.frame = self.view.bounds;
                     self.snapView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
@@ -130,7 +130,7 @@
                     
                 } else if (snapImage.imageOrientation == UIImageOrientationLeft || snapImage.imageOrientation == UIImageOrientationRight || snapImage.imageOrientation == UIImageOrientationLeftMirrored || snapImage.imageOrientation == UIImageOrientationRightMirrored) {
                     
-                    NSLog(@" ---> landscape");
+                    // NSLog(@" ---> landscape");
                 }
                 self.snapView.image = [UIImage imageWithData:snapData];
                 

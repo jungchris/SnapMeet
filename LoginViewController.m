@@ -87,7 +87,7 @@
                 
                 // TODO: Retrieve userName from Parse
                 NSString *userName = [user objectForKey:@"firstAndLast"];
-                NSLog(@"user firstAndLast: %@", userName);
+                // NSLog(@"user firstAndLast: %@", userName);
                 
                 if (userName.length > 1 && userEmail.length > 6) {
                     
@@ -397,7 +397,7 @@
 
 - (void)setInstallToken:(NSString *)userEmail {
     
-    NSLog(@"LoginVC: [TOKEN] setInstallToken with email: %@", userEmail);
+    // NSLog(@"LoginVC: [TOKEN] setInstallToken with email: %@", userEmail);
     // Create a record of the current installation for this user.  This will later be user for individual push notifications
     [[PFInstallation currentInstallation] setObject:[PFUser currentUser] forKey:@"userId"];
     [[PFInstallation currentInstallation] setObject:userEmail forKey:@"userEmail"];

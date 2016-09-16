@@ -178,8 +178,8 @@
     NSDate *updated = [location updatedAt];
     NSMutableString *detailText = [[NSMutableString alloc] initWithCapacity:60];
     
-    NSLog(@"---> updatedAt: %@", updated);
-    NSLog(@"---> DateTime localized: %@", [NSDateFormatter localizedStringFromDate:updated dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle]);
+    // NSLog(@"---> updatedAt: %@", updated);
+    // NSLog(@"---> DateTime localized: %@", [NSDateFormatter localizedStringFromDate:updated dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle]);
     
     
     [detailText appendString:NSLocalizedStringWithDefaultValue(@"TIME_SENT", nil, [NSBundle mainBundle], @"Sent: ", nil)];
@@ -226,8 +226,6 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"showDetail"]) {
-        
-        NSLog(@"LocationVC: prepareForSegue: showDetail");
         
         // set emilAddr & rcipientName property in MpViewController
         DetailViewController *dvc = [segue destinationViewController];
